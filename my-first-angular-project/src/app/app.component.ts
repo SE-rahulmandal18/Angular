@@ -8,11 +8,11 @@ import { Component } from '@angular/core';
 export class AppComponent {
   // title = 'my-first-angular-project';
 
-  noOfProductViews:number=0;
+  noOfProductViews: number = 0;
 
-  parentFunc1(evt:any):void{
+  parentFunc1(evt: any): void {
     console.log(`got an event from the chils ${evt}`);
 
-    this.noOfProductViews=evt;
+    this.noOfProductViews = evt;
   }
 }
