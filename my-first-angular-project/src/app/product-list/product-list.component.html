@@ -1,0 +1,42 @@
+<div style="border: 2px solid blue">
+    Product list: <br><br>
+
+    <table border="2px">
+        <tr>
+          <th>Product Name</th>
+          <th>Price</th>
+          <th>Images</th>
+          <th>Special</th>
+          <th>InStock</th>
+
+        </tr>
+        <tr *ngFor="let product of products">
+          <td style="padding: 6px;">{{product.name}}</td>
+          <td style="padding: 6px;">{{product.price | currency:"INR"}}</td>
+          <td><img [src]="product.imgSrc" width="150px" height="120px" ></td>
+          <td>
+            <div [style.color]="product.isSpecial ? 'red': 'green'">This product is Special</div>
+          </td>
+          <td><div [class.inStock]="product.inStock">This product is in Stock</div></td>
+        </tr>
+      </table>
+
+</div>
+
+
+<!-- 
+<div style="border: 2px solid blue">
+  Product list: <br><br>
+
+  <table border="2">
+      <tr><th>NAME</th><th>PRICE</th></tr>
+      <div *ngFor="let prod of products">
+
+         <tr>
+          <td> <img [src]="prod.imgSrc" width="150px" height="120px" > <td> {{prod.name}} <td> {{prod.price}} </tr>
+
+      </div>
+
+  </table> -->
+
+
