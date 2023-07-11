@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges, OnDestroy, Input  } from '@angular/core';
+import { Component, OnInit, OnChanges, OnDestroy, Input, Output, EventEmitter } from '@angular/core';
 import { Product } from '../classes/Product';
 
 @Component({
@@ -10,32 +10,42 @@ export class ProductComponent implements OnInit, OnChanges, OnDestroy {
   // name:string='HP Laptop';
   // price:number=2000;
 
-  @Input("message") msg:string='';
 
-  product: Product = new Product("mac",2000,"assets/images/mac.jpg",true,true);
+  productCounter:number=0;
 
-  constructor(){
+  @Input("message") msg: string = '';
+
+  @Output() helloChange = new EventEmitter<string>();
+
+  f1(): void {
+    this.helloChange.emit(`Hello Parent. I got ${this.productCounter++} views`);
+  }
+
+
+  product: Product = new Product("mac", 2000, "assets/images/mac.jpg", true, true);
+
+  constructor() {
     console.log("ProductComponent : constructor called");
   }
 
-  ngOnInit(){
+  ngOnInit() {
     console.log("ProductComponent : ngOnInit called");
     console.log(`Here is the message from parent: ${this.msg}`);
   }
 
-  ngOnChanges(){
+  ngOnChanges() {
     console.log("ProductComponent : ngOnChanges called");
   }
 
-  ngOnDestroy(){
+  ngOnDestroy() {
     console.log("ProductComponent : ngOnDestroy called");
   }
 
-  addLike(evt:any):void{
+  addLike(evt: any): void {
     console.log(`like button clicked.! Its was clicked by ${evt.target.name}`);
   }
 
-  addComments(val:string):void{
-    console.log(`Thank you. Got your comments - ${val}` );
+  addComments(val: string): void {
+    console.log(`Thank you. Got your comments - ${val}`);
   }
 }
