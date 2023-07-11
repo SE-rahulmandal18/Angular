@@ -28,10 +28,10 @@ export class ProductComponent implements OnInit, OnChanges, OnDestroy {
     console.log("ProductComponent : ngOnDestroy called")
   }
 
-  addLike():void{
-    console.log("clicked the like button");
+  addLike(evt:any):void{
+    console.log(`like button clicked.! Its was clicked by ${evt.target.name}`);
   }
-  
+
   addComments(val:string):void{
     console.log(`Thank you. Got your comments - ${val}` );
   }
