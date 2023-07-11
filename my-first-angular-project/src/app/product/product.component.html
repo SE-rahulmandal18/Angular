@@ -11,5 +11,13 @@
         <li>{{ product.name }} </li>
         <li>{{ product.price }} </li>
     </ul>
-    
+
+    <button class="btn btn-primary" (click)="addLike()">Like! </button>
+
+    <br><br>
+     Add your Comments : <input type="text"  (input)="addComments (comment.value)" #comment>
+
+    <br><br>
+    Any suggestion for the renaming the product? : <input type="text" [(ngModel)]="product.name"> 
+
     </div>
