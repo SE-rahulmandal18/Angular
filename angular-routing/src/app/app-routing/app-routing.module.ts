@@ -7,8 +7,8 @@
 // import { UsersResolveGuard } from './../guards/users-resolve/users-resolve.guard';
 // import { DeactivateGuard } from './../guards/deactivate/deactivate.guard';
 // // import { ActivateGuard } from './../guards/activate/activate.guard';
-// import { PlaceholderComponent } from './../components/placeholder/placeholder.component';
-// import { UserDetailsComponent } from './../components/user-details/user-details.component';
+import { PlaceholderComponent } from './../components/placeholder/placeholder.component';
+import { UserDetailsComponent } from './../components/user-details/user-details.component';
 import { UsersComponent } from './../components/users/users.component';
 // import { MessageListComponent } from './../components/message-list/message-list.component';
 import { BlogComponent } from './../components/blog/blog.component';
@@ -23,7 +23,14 @@ const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'blog', component: BlogComponent },
-  { path: 'users', component: UsersComponent },
+  { path: 'users', component: UsersComponent, children: [
+    { path: ':id', component: UserDetailsComponent},
+    { path: '', component: PlaceholderComponent }
+
+]},
+  { path: '**', redirectTo: '/home', pathMatch: 'full' }
+];
+ 
 
 //   { path: 'messages', component: MessageListComponent, canDeactivate: [ DeactivateGuard ] },
 //   { path: 'parent', component: ParentComponent },
@@ -33,19 +40,7 @@ const appRoutes: Routes = [
 //   { path: 'new-user-reactive', component: NewUserReactiveComponent },
 //   { 
 
-//     path: 'users', 
-//     // component: UsersComponent,
-//     // canActivateChild: [ ActivateGuard ],
-//     /* resolve: {
-//       users: UsersResolveGuard
-//     }, */
-//     children: [
-//     //   { path: ':userId', component: UserDetailsComponent },
-//     //   { path: '', component: PlaceholderComponent }
-//     ]
-//   },
-//   { path: '**', redirectTo: '/home', pathMatch: 'full' }
-];
+ 
 
 @NgModule({
   imports: [ RouterModule.forRoot(appRoutes) ],

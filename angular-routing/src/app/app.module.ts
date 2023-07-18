@@ -16,8 +16,11 @@ import { BlogComponent } from './components/blog/blog.component';
 import { HomeComponent } from './components/home/home.component';
 import { UsersComponent } from './components/users/users.component';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
+import { UserComponent } from './components/user/user.component';
 
-// import { PlaceholderComponent } from './components/placeholder/placeholder.component';
+import { PlaceholderComponent } from './components/placeholder/placeholder.component';
+
+
 // import { OneComponent } from './components/one/one.component';
 // import { TwoComponent } from './components/two/two.component';
 // import { ParentComponent } from './components/parent/parent.component';
@@ -42,9 +45,10 @@ import { UserDetailsComponent } from './components/user-details/user-details.com
     HomeComponent,
     UsersComponent,
     UserDetailsComponent,
+    UserComponent,
   
    
-    // PlaceholderComponent,
+    PlaceholderComponent,
     // OneComponent,
     // TwoComponent,
     // ParentComponent,

@@ -8,12 +8,14 @@
     <li 
     class="list-group-item"
     *ngFor="let user of users">
-    <a routerLink="./{{ user.id }}">{{ user.name }}</a> 
+    <!-- <a routerLink="./{{ user.id }}">{{ user.name }}</a>  -->
+    <app-user [user]="user"></app-user>
   </li>
   </ul>
   </div>
   <div class="col-md-8">
-  <app-user-details></app-user-details>
+    <router-outlet></router-outlet>
+  <!-- <app-user-details></app-user-details> -->
   </div>
 
 </div> 
