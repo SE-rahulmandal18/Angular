@@ -16,7 +16,7 @@ import { BlogComponent } from './components/blog/blog.component';
 import { HomeComponent } from './components/home/home.component';
 import { UsersComponent } from './components/users/users.component';
 import { UserComponent } from './components/user/user.component';
-// import { UserDetailsComponent } from './components/user-details/user-details.component';
+import { UserDetailsComponent } from './components/user-details/user-details.component';
 // import { PlaceholderComponent } from './components/placeholder/placeholder.component';
 // import { OneComponent } from './components/one/one.component';
 // import { TwoComponent } from './components/two/two.component';
@@ -41,8 +41,8 @@ import { UserComponent } from './components/user/user.component';
     BlogComponent,
     HomeComponent,
     UsersComponent,
-    UserComponent
-    // UserDetailsComponent,
+    UserComponent,
+    UserDetailsComponent
     // PlaceholderComponent,
     // OneComponent,
     // TwoComponent,
