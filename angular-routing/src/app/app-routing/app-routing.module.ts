@@ -24,7 +24,7 @@ const appRoutes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'blog', component: BlogComponent },
   { path: 'users', component: UsersComponent, children: [
-    { path: ':id', component: UserDetailsComponent},
+    { path: ':userId', component: UserDetailsComponent },
     { path: '', component: PlaceholderComponent }
 
 ]},

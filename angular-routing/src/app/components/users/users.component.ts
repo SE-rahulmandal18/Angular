@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.scss']
 })
-export class UsersComponent {
+export class UsersComponent implements OnInit {
+  
   users: Array<{ id: number, name: string, email:string  }> = [
     { id: 1, name: 'John Doe', email: 'john.doe@example.com'},
     { id: 2, name: 'Jocob Riglin', email: 'jacob.riglin@example.com'},
@@ -16,4 +17,8 @@ export class UsersComponent {
     { id: 7, name: 'Jordan Taylor', email: 'jordon.taylor@example.com'}
   ];
   
+  constructor() {}
+
+  ngOnInit() {}
+
 }
