@@ -18,13 +18,5 @@ export class AuthGuard implements CanActivate {
     }
 }
 
-    // throw new Error('Method not implemented.');
-//   }
-//   CanActivate(
-//     next: ActivatedRouteSnapshot,
-//     state:RouterStateSnapshot
-//   ): Observable<boolean> | Promise<boolean> | boolean {
-//     return false;
-//   }
-
+  
  
