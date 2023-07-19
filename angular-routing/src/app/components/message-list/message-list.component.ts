@@ -1,5 +1,5 @@
-// import { 
-//   Component, 
+import { 
+  Component, 
 //   OnInit, 
 //   ViewChild, 
 //   AfterViewInit, 
@@ -8,22 +8,23 @@
 //   ContentChild,
 //   AfterContentInit,
 //   ContentChildren
-// } from '@angular/core';
+} from '@angular/core';
+import { CanComponentDeactivate } from 'src/app/guards/confirmation/confirmation.guard';
 
 // import { MessageComponent } from './../message/message.component';
 
-// import { CanComponentDeactivate } from './../../guards/deactivate/deactivate.guard';
 
-// @Component({
-//   selector: 'app-message-list',
-//   templateUrl: './message-list.component.html',
-//   styleUrls: ['./message-list.component.css']
-// })
-// export class MessageListComponent implements OnInit, CanComponentDeactivate {
 
-//   messages: Array<{ message: string }>;
+@Component({
+  selector: 'app-message-list',
+  templateUrl: './message-list.component.html',
+  styleUrls: ['./message-list.component.css']
+})
+export class MessageListComponent implements CanComponentDeactivate {
 
-//   constructor() { }
+  messages: Array<{ message: string }> = [];
+
+  constructor() { }
 
 //   ngOnInit() {
 //     this.messages = [
@@ -35,16 +36,16 @@
 //     ];
 //   }
 
-//   onMessageDelete($event) {
-//     this.messages.splice($event, 1);
-//   }
+  onMessageDelete($event: number) {
+    this.messages.splice($event, 1);
+  }
 
-//   changeFirstMessage() {
-//     this.messages[0].message = 'This is a changed message';
-//   }
+  changeFirstMessage() {
+    this.messages[0].message = 'This is a changed message';
+  }
 
-//   confirm(): boolean {
-//     return confirm('Are you sure you want to navigate away?');
-//   }
+  confirm(): boolean {
+    return confirm('Are you sure you want to navigate away?');
+  }
 
-// }
+}

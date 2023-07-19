@@ -6,12 +6,12 @@ import { AuthGuard } from './../guards/auth/auth.guard';
 // import { ParentComponent } from './../components/parent/parent.component';
 // import { UserService } from './../services/user/user.service';
 // import { UsersResolveGuard } from './../guards/users-resolve/users-resolve.guard';
-// import { DeactivateGuard } from './../guards/deactivate/deactivate.guard';
+
 // // import { ActivateGuard } from './../guards/activate/activate.guard';
 import { PlaceholderComponent } from './../components/placeholder/placeholder.component';
 import { UserDetailsComponent } from './../components/user-details/user-details.component';
 import { UsersComponent } from './../components/users/users.component';
-// import { MessageListComponent } from './../components/message-list/message-list.component';
+import { MessageListComponent } from './../components/message-list/message-list.component';
 import { BlogComponent } from './../components/blog/blog.component';
 import { AboutComponent } from './../components/about/about.component';
 
@@ -19,6 +19,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './../components/home/home.component';
+import { ConfirmationGuard } from '../guards/confirmation/confirmation.guard';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -33,11 +34,12 @@ const appRoutes: Routes = [
    // { path: '', component: PlaceholderComponent }
 
 ]},
+{ path: 'messages', component: MessageListComponent, canDeactivate: [ ConfirmationGuard ] },
   { path: '**', redirectTo: '/home', pathMatch: 'full' }
 ];
  
 
-//   { path: 'messages', component: MessageListComponent, canDeactivate: [ DeactivateGuard ] },
+   
 //   { path: 'parent', component: ParentComponent },
 //   { path: 'bd', component: BuiltInDirectivesComponent },
 //   { path: 'cd', component: CustomDirectivesComponent },
@@ -49,7 +51,7 @@ const appRoutes: Routes = [
 
 @NgModule({
   imports: [ RouterModule.forRoot(appRoutes) ],
-  providers: [ AuthGuard ],
+  providers: [ AuthGuard, ConfirmationGuard ],
   exports: [ RouterModule ]
 
   

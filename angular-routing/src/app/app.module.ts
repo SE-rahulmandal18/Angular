@@ -8,7 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { AppComponent } from './app.component';
 //  import { MessageComponent } from './components/message/message.component';
-// import { MessageListComponent } from './components/message-list/message-list.component';
+import { MessageListComponent } from './components/message-list/message-list.component';
 // import { VoterComponent } from './components/voter/voter.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AboutComponent } from './components/about/about.component';
@@ -37,7 +37,7 @@ import { PlaceholderComponent } from './components/placeholder/placeholder.compo
   declarations: [
     AppComponent,
     // MessageComponent,
-    // MessageListComponent,
+    MessageListComponent,
     // VoterComponent,
     HeaderComponent,
     AboutComponent,
