@@ -34,6 +34,8 @@ export class UserDetailsComponent implements OnInit {
       //console.log('Got the paramas as:', params);
 
     });
+
+    this.activatedRoute.queryParams.subscribe((qs) => console.log('Got the QS as:', qs))
   }
 
 }
