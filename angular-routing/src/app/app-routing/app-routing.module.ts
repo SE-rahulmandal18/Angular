@@ -1,3 +1,4 @@
+import { AuthGuard } from './../guards/auth/auth.guard'; 
 // import { NewUserReactiveComponent } from './../components/new-user-reactive/new-user-reactive.component';
 // import { NewUserComponent } from './../components/new-user/new-user.component';
 // import { CustomDirectivesComponent } from './../components/custom-directives/custom-directives.component';
@@ -22,10 +23,14 @@ import { HomeComponent } from './../components/home/home.component';
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'blog', component: BlogComponent },
-  { path: 'users', component: UsersComponent, children: [
+  { path: 'blog', component: BlogComponent, canActivate: [AuthGuard] },
+  { 
+    path: 'users', 
+    component: UsersComponent, 
+    canActivateChild: [AuthGuard],
+    children: [
     { path: ':userId', component: UserDetailsComponent },
-    { path: '', component: PlaceholderComponent }
+   // { path: '', component: PlaceholderComponent }
 
 ]},
   { path: '**', redirectTo: '/home', pathMatch: 'full' }
@@ -44,7 +49,10 @@ const appRoutes: Routes = [
 
 @NgModule({
   imports: [ RouterModule.forRoot(appRoutes) ],
-  exports: [ RouterModule ],
+  providers: [ AuthGuard ],
+  exports: [ RouterModule ]
+
+  
 //   providers: [ ActivateGuard, DeactivateGuard, UsersResolveGuard, UserService ]
 })
 export class AppRoutingModule { }
