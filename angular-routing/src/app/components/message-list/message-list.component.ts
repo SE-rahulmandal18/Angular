@@ -9,6 +9,7 @@ import {
 //   AfterContentInit,
 //   ContentChildren
 } from '@angular/core';
+
 import { CanComponentDeactivate } from 'src/app/guards/confirmation/confirmation.guard';
 
 // import { MessageComponent } from './../message/message.component';
@@ -23,6 +24,7 @@ import { CanComponentDeactivate } from 'src/app/guards/confirmation/confirmation
 export class MessageListComponent implements CanComponentDeactivate {
 
   messages: Array<{ message: string }> = [];
+  message: string = '';
 
   constructor() { }
 
@@ -35,6 +37,11 @@ export class MessageListComponent implements CanComponentDeactivate {
 //       { message: 'Message 5' } */
 //     ];
 //   }
+
+addMessage() {
+  this.messages.push({ message: this.message});
+  this.message = '';
+}
 
   onMessageDelete($event: number) {
     this.messages.splice($event, 1);

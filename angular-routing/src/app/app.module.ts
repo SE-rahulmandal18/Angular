@@ -1,4 +1,5 @@
-// import { UserService } from './services/user/user.service';
+
+
 // import { MaterialModule } from './material/material.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -7,7 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { AppComponent } from './app.component';
-//  import { MessageComponent } from './components/message/message.component';
+ import { MessageComponent } from './components/message/message.component';
 import { MessageListComponent } from './components/message-list/message-list.component';
 // import { VoterComponent } from './components/voter/voter.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -17,8 +18,8 @@ import { HomeComponent } from './components/home/home.component';
 import { UsersComponent } from './components/users/users.component';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
 import { UserComponent } from './components/user/user.component';
-
 import { PlaceholderComponent } from './components/placeholder/placeholder.component';
+import { UserService } from './services/user/user.service';
 
 
 // import { OneComponent } from './components/one/one.component';
@@ -36,7 +37,7 @@ import { PlaceholderComponent } from './components/placeholder/placeholder.compo
 @NgModule({
   declarations: [
     AppComponent,
-    // MessageComponent,
+    MessageComponent,
     MessageListComponent,
     // VoterComponent,
     HeaderComponent,
@@ -49,27 +50,17 @@ import { PlaceholderComponent } from './components/placeholder/placeholder.compo
   
    
     PlaceholderComponent,
-    // OneComponent,
-    // TwoComponent,
-    // ParentComponent,
-    // BuiltInDirectivesComponent,
-    // ChangeCaseDirective,
-    // CustomDirectivesComponent,
-    // UnlessDirective,
-    // AppendorPipe,
-    // FilterPipe,
-    // NewUserComponent,
-    // NewUserReactiveComponent
+  
   ],
   imports: [
     BrowserModule,
-    // MaterialModule,
+   
     FormsModule,
     AppRoutingModule,
-    // HttpClientModule,
+   
     ReactiveFormsModule
   ],
-//   providers: [ UserService ],
+  providers: [ UserService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
