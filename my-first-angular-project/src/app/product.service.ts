@@ -33,4 +33,17 @@ export class ProductService {
     return new Product("Macbook", 60000, "assets/images/mac.jpg", true, true);
   }
 
+  getProductFromBackend(id: number): Observable<Product> {
+     return this.http.get<Product>(`${this.backEndUrl}/details/${id}`);
+  }
+
+  addProductToBackEnd(name: string, price: number): Observable<Product> {
+    return this.http.post<Product>(`${this.backEndUrl}/add`,
+      {
+        "name": name,
+        "price": price,
+      }
+    );
+  }
+
 }

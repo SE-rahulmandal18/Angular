@@ -33,8 +33,11 @@ export class ProductComponent implements OnInit, OnChanges, OnDestroy {
     console.log("ProductComponent : ngOnInit called");
     console.log(`Here is the message from parent: ${this.msg}`);
 
-    this.product = this.productService.getProduct();
-  }
+    // this.product = this.productService.getProduct();
+    this.productService.getProductFromBackend(3).subscribe(
+      (response) => { this.product = response; },
+      ( error ) => { console.log(error);});
+    }
 
   ngOnChanges() {
     console.log("ProductComponent : ngOnChanges called");
