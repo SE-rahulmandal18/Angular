@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Product } from './classes/Product';
 
 @Injectable({
   providedIn: 'root'
@@ -6,4 +7,15 @@ import { Injectable } from '@angular/core';
 export class ProductService {
 
   constructor() { }
+  
+  //APIs
+  getAllProducts(): Product[] {
+
+    return [
+      new Product("Macbook", 60000, "assets/images/mac.jpg", true, true),
+      new Product("Keyboard", 560, "assets/images/keyboard.jpg", false, true),
+      new Product("Mouse", 600, '', false, false),
+      new Product("Monitor", 20000, '', true, false),
+    ];
+  }
 }
