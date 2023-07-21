@@ -1,3 +1,4 @@
+import { ProductService } from '../product.service';
 import { Product } from './../classes/Product';
 import { Component } from '@angular/core';
 
@@ -9,9 +10,14 @@ import { Component } from '@angular/core';
 export class AddProductComponent {
 
   product: Product = new Product('', 0, '', true, true);
-
-  OnSubmit(): void {
-    console.log(`Form submitted ${this.product.name}, ${this.product.price}`)
+  
+  constructor(private productService: ProductService) {
   }
 
+  OnSubmit():void{
+    console.log(`Form submitted with values ${this.product.name} , ${this.product.price} `);
+    this.productService.addProductToBackEnd(this.product.name,this.product.price).subscribe(
+      (response) => { this.product = response; },
+      (error) => { console.log(error); });
+  }
 }
