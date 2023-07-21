@@ -1,12 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Product } from './classes/Product';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
 
-  constructor() { }
+  private backEndUrl ='http://localhost:8080/product';
+
+  constructor(private http: HttpClient) { }
   
   //APIs
   getAllProducts(): Product[] {
@@ -17,6 +21,11 @@ export class ProductService {
       new Product("Mouse", 600, '', false, false),
       new Product("Monitor", 20000, '', true, false),
     ];
+  }
+
+
+  getAllProductsFromBackend(): Observable<Product[]> {
+    return this.http.get<Product[]>(`${this.backEndUrl}/list`);
   }
 
   getProduct(prodNum: number = 0): Product {
