@@ -1,5 +1,6 @@
 import { Component, OnInit, OnChanges, OnDestroy, Input, Output, EventEmitter } from '@angular/core';
 import { Product } from '../classes/Product';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'product',
@@ -17,20 +18,22 @@ export class ProductComponent implements OnInit, OnChanges, OnDestroy {
 
   @Output() helloChange = new EventEmitter<string>();
 
+
+  constructor(private productService: ProductService){}
+
   f1(): void {
     this.helloChange.emit(`Hello Parent. I got ${this.productCounter++} views`);
   }
 
 
-  product: Product = new Product("mac", 2000, "assets/images/mac.jpg", true, true);
-
-  constructor() {
-    console.log("ProductComponent : constructor called");
-  }
+  // product: Product = new Product("mac", 2000, "assets/images/mac.jpg", true, true);
+  product!: Product;
 
   ngOnInit() {
     console.log("ProductComponent : ngOnInit called");
     console.log(`Here is the message from parent: ${this.msg}`);
+
+    this.product = this.productService.getProduct();
   }
 
   ngOnChanges() {

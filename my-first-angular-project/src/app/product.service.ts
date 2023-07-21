@@ -18,4 +18,10 @@ export class ProductService {
       new Product("Monitor", 20000, '', true, false),
     ];
   }
+
+  getProduct(prodNum: number = 0): Product {
+
+    return new Product("Macbook", 60000, "assets/images/mac.jpg", true, true);
+  }
+
 }
