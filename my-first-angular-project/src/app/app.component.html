@@ -13,11 +13,11 @@
     
    <add-product-using-reactive-form></add-product-using-reactive-form>
 
-    
-<product (helloChange)="parentFunc1($event)"></product>
+   <product productNumber="3"></product>    
+<product  productNumber="4" message="Hi Child!" (helloChange)="parentFunc1($event)"></product>
 No of Product views : {{noOfProductViews}}
 
-<product message="Hi Child!"></product>
+
 
 <product-list></product-list> 
 

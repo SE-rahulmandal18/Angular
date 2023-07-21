@@ -16,6 +16,8 @@ export class ProductComponent implements OnInit, OnChanges, OnDestroy {
 
   @Input("message") msg: string = '';
 
+  @Input("productNumber") pNumber: string = "1";
+
   @Output() helloChange = new EventEmitter<string>();
 
 
@@ -34,7 +36,7 @@ export class ProductComponent implements OnInit, OnChanges, OnDestroy {
     console.log(`Here is the message from parent: ${this.msg}`);
 
     // this.product = this.productService.getProduct();
-    this.productService.getProductFromBackend(3).subscribe(
+    this.productService.getProductFromBackend(this.pNumber).subscribe(
       (response) => { this.product = response; },
       ( error ) => { console.log(error);});
     }
