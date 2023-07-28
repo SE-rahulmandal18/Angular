@@ -1,20 +1,19 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-import { UserComponent } from '../components/user/user.component';
+import { HomeComponent } from '../components/home/home.component';
+import { UsersComponent } from '../components/users/users.component';
 import { UserDetailsComponent } from '../components/user-details/user-details.component';
 import { PlaceholderComponent } from '../components/placeholder/placeholder.component';
 
 
-
 const appRoutes: Routes = [
-  { path: 'users', component: UserComponent, children: [
-    {path: ':id', component: UserDetailsComponent},
-    {path: '', component: PlaceholderComponent},
-  ] },
-  { path: '**', redirectTo: '/users', pathMatch: 'full' },
-  { path: '**', redirectTo: '/users', pathMatch: 'full' }
-];
+  {path: 'home', component: HomeComponent},
+  {path: 'users', component: UsersComponent, children: [
+    {path: 'id', component: UserDetailsComponent },
+    {path: '', component: PlaceholderComponent}
+  ]},
+  {path: '**', redirectTo: '/users', pathMatch: 'full'}
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(appRoutes)],
