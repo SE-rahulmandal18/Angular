@@ -19,4 +19,9 @@ export class EventBindingDemoComponent {
     this.dt=new Date().toString();
   }
 
+  handleEvent(arg:any)
+  {
+    console.log(arg);
+  }
+
 }
