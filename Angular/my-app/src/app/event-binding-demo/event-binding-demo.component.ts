@@ -9,7 +9,7 @@ export class EventBindingDemoComponent {
 
   dt:string="";
 
-  firstName:string="Tom";
+  firstName:string="John";
   
   lastName:string="Doe";
 
