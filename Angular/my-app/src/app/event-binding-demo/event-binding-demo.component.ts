@@ -9,6 +9,8 @@ export class EventBindingDemoComponent {
 
   dt:string="";
 
+  firstName:string="Tom";
+
   notifyMe()
   {
     alert("Alert !")

@@ -4,6 +4,28 @@
 
 <input type="button" value="display Date" (click)="displayDate()"> 
 
-<span> current datetime is {{dt}}</span>
+<!-- interpolation binding/one way binding -->
 
+<span> current datetime is {{dt}}</span>
+<input type="text" value={{dt}}>
+<br><br>
+<!-- one way binding  -->
+
+<div>one way binding</div>
+<input type="text" value="{{firstName}}">
+
+<div>firstName is {{firstName}}</div>
+
+<br>
+<!-- two way binding -->
+
+<div>two way binding</div>
+<input type="text" [(ngModel)]=firstName>
+
+
+
+<!-- event binding -->
 <input type="text" (keydown)="handleEvent($event)">
+
+
+
