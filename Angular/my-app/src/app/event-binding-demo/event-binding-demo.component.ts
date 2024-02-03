@@ -10,6 +10,8 @@ export class EventBindingDemoComponent {
   dt:string="";
 
   firstName:string="Tom";
+  
+  lastName:string="Doe";
 
   notifyMe()
   {
