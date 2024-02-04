@@ -1,0 +1,14 @@
+<p>i am the parent component</p>
+
+<div>trying to load child comp</div>
+
+<!-- this binding is called property binding e.g -->
+
+<!-- <app-child [title]='"data from parent"'></app-child> -->
+
+<input type="button" value="send data" (click)="generateRabdom()">
+
+<app-child [title]=res (notify)="DataRecieved($event)"></app-child>
+
+<span> message form child is {{x}}</span>
+

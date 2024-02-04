@@ -7,13 +7,19 @@ import { AppComponent } from './app.component';
 import { HelloComponent } from './hello-world.component';
 import { EventBindingDemoComponent } from './event-binding-demo/event-binding-demo.component';
 import { FormsModule } from '@angular/forms';
+import { BindingsDemoComponent } from './bindings-demo/bindings-demo.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HelloComponent,
-    EventBindingDemoComponent
+    EventBindingDemoComponent,
+    BindingsDemoComponent,
+    ParentComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,
