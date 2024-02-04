@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { BindingsDemoComponent } from './bindings-demo/bindings-demo.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
+import { AttributeBindingDemoComponent } from './attribute-binding-demo/attribute-binding-demo.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ChildComponent } from './child/child.component';
     EventBindingDemoComponent,
     BindingsDemoComponent,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
+    AttributeBindingDemoComponent
   ],
   imports: [
     BrowserModule,
