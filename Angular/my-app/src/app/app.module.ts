@@ -11,6 +11,12 @@ import { BindingsDemoComponent } from './bindings-demo/bindings-demo.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { AttributeBindingDemoComponent } from './attribute-binding-demo/attribute-binding-demo.component';
+import { ForIfComponent } from './for-if/for-if.component';
+import { SwitchComponent } from './switch/switch.component';
+import { ElseComponent } from './Else.component';
+import { FirstLastOddEvenComponent } from './first-last-odd-even/first-last-odd-even.component';
+import { TrackByDemosComponent } from './track-by-demos/track-by-demos.component';
+
 
 
 @NgModule({
@@ -21,7 +27,12 @@ import { AttributeBindingDemoComponent } from './attribute-binding-demo/attribut
     BindingsDemoComponent,
     ParentComponent,
     ChildComponent,
-    AttributeBindingDemoComponent
+    AttributeBindingDemoComponent,
+    ForIfComponent,
+    SwitchComponent,
+    ElseComponent,
+    FirstLastOddEvenComponent,
+    TrackByDemosComponent
   ],
   imports: [
     BrowserModule,

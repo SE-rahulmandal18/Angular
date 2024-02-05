@@ -1,0 +1,23 @@
+
+<ul *ngFor="let person of people" [ngSwitch]="person.country">
+   
+    <li *ngSwitchCase="'UK'"
+        class="text-success">
+        {{ person.name }} ({{ person.country }})
+    </li>
+
+    <li *ngSwitchCase="'US'"
+        class="text-primary">
+        {{ person.name }} ({{ person.country }})
+    </li>
+
+    <li *ngSwitchCase="'IND'"
+        class="text-danger">
+        {{ person.name }} ({{ person.country }})
+    </li>
+
+    <li *ngSwitchDefault
+        class="text-warning">
+        {{ person.name }} ({{ person.country }})
+    </li>
+</ul>

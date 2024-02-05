@@ -1,0 +1,26 @@
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Salary</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr **ngFor="let p of people; let i = index; first as isFirst; 
+                    last as isLast; odd as isOdd; even as isEven; total as totalCount">
+            <td>Index :{{ i }}</td>
+            <td>SL NO: :{{ i + 1}}</td>
+            <td>total Count :{{ i + 1}} of {{ totalCount }}</td>
+            <td>{{ p.name }}</td>
+            <td>{{ p.age }}</td>
+            <td>{{ p.salary }}</td>
+            <td>
+                isFirst: {{ isFirst }}
+                isLast: {{ isLast }}
+                isOdd: {{ isEven }}
+                isOdd: {{ isOdd }}
+            </td>
+        </tr>
+    </tbody>
+</table>
