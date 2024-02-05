@@ -16,6 +16,8 @@ import { SwitchComponent } from './switch/switch.component';
 import { ElseComponent } from './Else.component';
 import { FirstLastOddEvenComponent } from './first-last-odd-even/first-last-odd-even.component';
 import { TrackByDemosComponent } from './track-by-demos/track-by-demos.component';
+import { UpdateColorDirective } from './update-color.directive';
+import { ShowHidePasswordDirective } from './show-hide-password.directive';
 
 
 
@@ -32,7 +34,10 @@ import { TrackByDemosComponent } from './track-by-demos/track-by-demos.component
     SwitchComponent,
     ElseComponent,
     FirstLastOddEvenComponent,
-    TrackByDemosComponent
+    TrackByDemosComponent,
+    UpdateColorDirective,
+    ShowHidePasswordDirective,
+    // SampleDirective
   ],
   imports: [
     BrowserModule,
