@@ -11,6 +11,7 @@
 
 <attribute-binding></attribute-binding> -->
 
+<!-- 
 <app-for-if></app-for-if>
 
 <else-comp></else-comp>
@@ -23,4 +24,32 @@
 
 <h1 UpdateColor>Hello I am a directive</h1>
 
-<input type="password" ShowHidePassword UpdateColor>
+<input type="password" ShowHidePassword UpdateColor> -->
+
+
+<h4>1. Today is {{tod}}</h4>
+<h4>2. Today is {{tod}} date</h4>
+<h4>3. Today is {{tod | date: "dd//MM//yyyy"}}</h4>
+
+<hr>
+<h4> Display in uppercase {{ str1 | uppercase}}</h4>
+<h4> Display in uppercase {{ str2 | lowercase}}</h4>
+
+<hr>
+
+<p>default {{ myNum | number}}</p>
+
+{{ myNum | number: '3.2-5'}}
+
+<hr>
+{{ x | number: '3.2-5'}}
+
+<hr>
+
+{{ myNum | currency}}
+
+<hr>
+
+{{ message}} 
+
+<p> {{ message | capitalize}} </p>

@@ -18,6 +18,7 @@ import { FirstLastOddEvenComponent } from './first-last-odd-even/first-last-odd-
 import { TrackByDemosComponent } from './track-by-demos/track-by-demos.component';
 import { UpdateColorDirective } from './update-color.directive';
 import { ShowHidePasswordDirective } from './show-hide-password.directive';
+import { CapitalizePipe } from './Capitalize.pipe';
 
 
 
@@ -37,6 +38,7 @@ import { ShowHidePasswordDirective } from './show-hide-password.directive';
     TrackByDemosComponent,
     UpdateColorDirective,
     ShowHidePasswordDirective,
+    CapitalizePipe
     // SampleDirective
   ],
   imports: [
