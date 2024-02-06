@@ -18,7 +18,6 @@ import { FirstLastOddEvenComponent } from './first-last-odd-even/first-last-odd-
 import { TrackByDemosComponent } from './track-by-demos/track-by-demos.component';
 import { UpdateColorDirective } from './update-color.directive';
 import { ShowHidePasswordDirective } from './show-hide-password.directive';
-import { CapitalizePipe } from './Capitalize.pipe';
 import { SortDemoComponent } from './sort-demo/sort-demo.component';
 import { PureSortPipe } from './PureSort.pipe';
 import { ImpureSortPipe } from './ImpureSort.pipe';
@@ -29,6 +28,10 @@ import { LifeCycleChildComponent } from './life-cycle-child/life-cycle-child.com
 import { ViewChildDemosComponent } from './view-child-demos/view-child-demos.component';
 import { ContentChildComponent } from './content-child/content-child.component';
 import { ContentParentComponent } from './content-parent/content-parent.component';
+import { CapitalizePipe } from './Capitalize.pipe';
+import { ErrorCmp } from './ErrorDemo';
+import { GlobalErrorHandler } from './GlobalErrorHandler';
+import {ErrorHandler} from '@angular/core';
 
 
 
@@ -58,7 +61,8 @@ import { ContentParentComponent } from './content-parent/content-parent.componen
     LifeCycleChildComponent,
     ViewChildDemosComponent,
     ContentChildComponent,
-    ContentParentComponent
+    ContentParentComponent,
+    ErrorCmp
     // SampleDirective
   ],
   imports: [
@@ -66,7 +70,7 @@ import { ContentParentComponent } from './content-parent/content-parent.componen
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [{provide: ErrorHandler, useClass: GlobalErrorHandler}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
