@@ -1,0 +1,56 @@
+<h3 class="title">Sort with Pure and Impure Pipes</h3>
+
+<div>
+  <input
+    type="number"
+    [(ngModel)]="newDigit"
+    maxInput
+    min="0"
+    placeholder="Number"
+    (keyup.enter)="addNewDigit()"
+    #input
+  />
+</div>
+&nbsp;
+<button mat-raised-button (click)="addNewDigit()" color="primary">
+  Add Digit
+</button>
+
+<div class="mat-elevation-z8">
+  <h3>Original List:</h3>
+
+  <p>You get, what you insert with no order change</p>
+
+  <div class="list">
+    <span *ngFor="let digit of originalList">
+      <b>{{ digit }}</b
+      >, &nbsp;
+    </span>
+  </div>
+</div>
+
+<div class="mat-elevation-z8">
+  <h3>Impure Pipe</h3>
+
+  <p>List is being sorted on every change</p>
+
+  <div class="list">
+    <span *ngFor="let digit of impureSortableDigits | impureSort">
+      <b>{{ digit }}</b
+      >, &nbsp;
+    </span>
+  </div>
+</div>
+
+<div class="mat-elevation-z8">
+  <h3>Pure Pipe</h3>
+
+  <p>List sorted on component load only</p>
+
+  <div class="list">
+    <span *ngFor="let digit of pureSortableDigits | pureSort">
+      <b>{{ digit }}</b
+      >, &nbsp;
+    </span>
+  </div>
+</div>

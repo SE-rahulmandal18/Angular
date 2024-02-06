@@ -19,6 +19,9 @@ import { TrackByDemosComponent } from './track-by-demos/track-by-demos.component
 import { UpdateColorDirective } from './update-color.directive';
 import { ShowHidePasswordDirective } from './show-hide-password.directive';
 import { CapitalizePipe } from './Capitalize.pipe';
+import { SortDemoComponent } from './sort-demo/sort-demo.component';
+import { PureSortPipe } from './PureSort.pipe';
+import { ImpureSortPipe } from './ImpureSort.pipe';
 
 
 
@@ -38,7 +41,10 @@ import { CapitalizePipe } from './Capitalize.pipe';
     TrackByDemosComponent,
     UpdateColorDirective,
     ShowHidePasswordDirective,
-    CapitalizePipe
+    CapitalizePipe,
+    SortDemoComponent,
+    PureSortPipe,
+    ImpureSortPipe
     // SampleDirective
   ],
   imports: [
