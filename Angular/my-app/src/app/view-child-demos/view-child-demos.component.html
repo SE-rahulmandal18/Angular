@@ -1,0 +1,16 @@
+<p>view-child-demos works!</p>
+
+<h3> have a look  &#64; your console </h3>
+
+<h3> here you are trying to get a reference to the
+    div tag using view-child-demos
+
+    div tag reference is not available in oninit as the template has not yet initialized.
+    So it prints undefined. but reference is available in AfterViewInit as the template
+    has been initialized. 
+</h3>
+
+<div *ngIf="true">
+    <div #myDiv>this is content of the div</div>
+
+</div>

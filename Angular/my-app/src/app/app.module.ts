@@ -26,6 +26,7 @@ import { FilterComponent } from './filter/filter.component';
 import { MyFilterPipe } from './my-filter.pipe';
 import { LifeCycleParentComponent } from './life-cycle-parent/life-cycle-parent.component';
 import { LifeCycleChildComponent } from './life-cycle-child/life-cycle-child.component';
+import { ViewChildDemosComponent } from './view-child-demos/view-child-demos.component';
 
 
 
@@ -52,7 +53,8 @@ import { LifeCycleChildComponent } from './life-cycle-child/life-cycle-child.com
     FilterComponent,
     MyFilterPipe,
     LifeCycleParentComponent,
-    LifeCycleChildComponent
+    LifeCycleChildComponent,
+    ViewChildDemosComponent
     // SampleDirective
   ],
   imports: [
