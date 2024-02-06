@@ -1,0 +1,11 @@
+
+<p>life-parent-works</p>
+
+<button (click)="status = !status">
+    {{ status ? 'Destroy Child' : 'Create Child' }}
+</button>
+
+<div *ngIf="status">
+    <life-cycle-child [prop]="prop"></life-cycle-child>
+</div>
+

@@ -24,6 +24,8 @@ import { PureSortPipe } from './PureSort.pipe';
 import { ImpureSortPipe } from './ImpureSort.pipe';
 import { FilterComponent } from './filter/filter.component';
 import { MyFilterPipe } from './my-filter.pipe';
+import { LifeCycleParentComponent } from './life-cycle-parent/life-cycle-parent.component';
+import { LifeCycleChildComponent } from './life-cycle-child/life-cycle-child.component';
 
 
 
@@ -48,7 +50,9 @@ import { MyFilterPipe } from './my-filter.pipe';
     PureSortPipe,
     ImpureSortPipe,
     FilterComponent,
-    MyFilterPipe
+    MyFilterPipe,
+    LifeCycleParentComponent,
+    LifeCycleChildComponent
     // SampleDirective
   ],
   imports: [
