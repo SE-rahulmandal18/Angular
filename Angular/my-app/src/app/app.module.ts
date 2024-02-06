@@ -22,6 +22,8 @@ import { CapitalizePipe } from './Capitalize.pipe';
 import { SortDemoComponent } from './sort-demo/sort-demo.component';
 import { PureSortPipe } from './PureSort.pipe';
 import { ImpureSortPipe } from './ImpureSort.pipe';
+import { FilterComponent } from './filter/filter.component';
+import { MyFilterPipe } from './my-filter.pipe';
 
 
 
@@ -44,7 +46,9 @@ import { ImpureSortPipe } from './ImpureSort.pipe';
     CapitalizePipe,
     SortDemoComponent,
     PureSortPipe,
-    ImpureSortPipe
+    ImpureSortPipe,
+    FilterComponent,
+    MyFilterPipe
     // SampleDirective
   ],
   imports: [

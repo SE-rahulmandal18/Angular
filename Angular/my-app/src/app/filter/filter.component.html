@@ -1,0 +1,20 @@
+<p>filter works!</p>
+
+
+<!-- <hello name="{{ name }}"></hello>
+ -->
+
+ <p>Start filtering to see some magic happen :)</p>
+
+<div>
+    <label for="filter">Filter by: </label>
+    <input type="text" id="filter" [(ngModel)]="filterBy" />
+</div>
+
+<button (click)="onAddUser()">Add user</button>
+
+<div *ngFor="let user of usersList | myFilter: filterBy: 'name'">
+<u>
+    <li>{{ user.name }}</li>
+</u>
+</div>
