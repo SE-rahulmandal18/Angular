@@ -32,6 +32,7 @@ import { CapitalizePipe } from './Capitalize.pipe';
 import { ErrorCmp } from './ErrorDemo';
 import { GlobalErrorHandler } from './GlobalErrorHandler';
 import {ErrorHandler} from '@angular/core';
+import { ViewEncapsulationDemoComponent } from './view-encapsulation-demo/view-encapsulation-demo.component';
 
 
 
@@ -62,7 +63,8 @@ import {ErrorHandler} from '@angular/core';
     ViewChildDemosComponent,
     ContentChildComponent,
     ContentParentComponent,
-    ErrorCmp
+    ErrorCmp,
+    ViewEncapsulationDemoComponent
     // SampleDirective
   ],
   imports: [
