@@ -56,3 +56,13 @@
 
 
 <sort-demo></sort-demo>
+
+<hr>
+
+<div *ngFor="let row of rows | keyvalue ">
+    {{ row | json | uppercase }}
+
+    {{ row.key }} : {{ row.value }}
+
+</div>
+

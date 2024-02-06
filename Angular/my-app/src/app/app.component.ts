@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'my-app';
 
+  // pipes demo
   tod=new Date();
 
   str1:string="hello";
@@ -18,5 +19,12 @@ export class AppComponent {
 
   message:string="hello there, how are you"
 
+
+  rows : any = {
+    a: 1,
+    b: 2,
+    c: 4,
+    d: 10
+  }
 
 }
