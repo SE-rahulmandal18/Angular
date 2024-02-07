@@ -39,6 +39,9 @@ import { ParentDIComponent } from './parent-di/parent-di.component';
 import { Child1DIComponent } from './child1-di/child1-di.component';
 import { Child2DIComponent } from './child2-di/child2-di.component';
 import { GenerateRandom } from './GenerateRandom';
+import { UseClassDemoComponent } from './use-class-demo/use-class-demo.component';
+import { UseFactoryDemoComponent } from './use-factory-demo/use-factory-demo.component';
+import { UseValueDemoComponent } from './use-value-demo/use-value-demo.component';
 
 
 
@@ -74,7 +77,10 @@ import { GenerateRandom } from './GenerateRandom';
     MyCarComponent,
     ParentDIComponent,
     Child1DIComponent,
-    Child2DIComponent
+    Child2DIComponent,
+    UseClassDemoComponent,
+    UseFactoryDemoComponent,
+    UseValueDemoComponent
     // SampleDirective
   ],
   imports: [
