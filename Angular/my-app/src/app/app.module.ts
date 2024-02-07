@@ -42,6 +42,7 @@ import { GenerateRandom } from './GenerateRandom';
 import { UseClassDemoComponent } from './use-class-demo/use-class-demo.component';
 import { UseFactoryDemoComponent } from './use-factory-demo/use-factory-demo.component';
 import { UseValueDemoComponent } from './use-value-demo/use-value-demo.component';
+import { InjectionTokenDemoComponent } from './injection-token-demo/injection-token-demo.component';
 
 
 
@@ -80,7 +81,8 @@ import { UseValueDemoComponent } from './use-value-demo/use-value-demo.component
     Child2DIComponent,
     UseClassDemoComponent,
     UseFactoryDemoComponent,
-    UseValueDemoComponent
+    UseValueDemoComponent,
+    InjectionTokenDemoComponent
     // SampleDirective
   ],
   imports: [
