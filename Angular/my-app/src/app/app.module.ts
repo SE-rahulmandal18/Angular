@@ -33,6 +33,8 @@ import { ErrorCmp } from './ErrorDemo';
 import { GlobalErrorHandler } from './GlobalErrorHandler';
 import {ErrorHandler} from '@angular/core';
 import { ViewEncapsulationDemoComponent } from './view-encapsulation-demo/view-encapsulation-demo.component';
+import { MyCarComponent } from './DI/MyCar';
+import { Car, Engine, Fuel, FuelInjector, Piston } from './DI/Car';
 
 
 
@@ -64,7 +66,8 @@ import { ViewEncapsulationDemoComponent } from './view-encapsulation-demo/view-e
     ContentChildComponent,
     ContentParentComponent,
     ErrorCmp,
-    ViewEncapsulationDemoComponent
+    ViewEncapsulationDemoComponent,
+    MyCarComponent
     // SampleDirective
   ],
   imports: [
@@ -72,7 +75,7 @@ import { ViewEncapsulationDemoComponent } from './view-encapsulation-demo/view-e
     AppRoutingModule,
     FormsModule
   ],
-  providers: [{provide: ErrorHandler, useClass: GlobalErrorHandler}],
+  providers: [{provide: ErrorHandler, useClass: GlobalErrorHandler}, Fuel, FuelInjector, Engine, Car,Piston],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
