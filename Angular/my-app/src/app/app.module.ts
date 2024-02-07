@@ -35,6 +35,10 @@ import {ErrorHandler} from '@angular/core';
 import { ViewEncapsulationDemoComponent } from './view-encapsulation-demo/view-encapsulation-demo.component';
 import { MyCarComponent } from './DI/MyCar';
 import { Car, Engine, Fuel, FuelInjector, Piston } from './DI/Car';
+import { ParentDIComponent } from './parent-di/parent-di.component';
+import { Child1DIComponent } from './child1-di/child1-di.component';
+import { Child2DIComponent } from './child2-di/child2-di.component';
+import { GenerateRandom } from './GenerateRandom';
 
 
 
@@ -67,7 +71,10 @@ import { Car, Engine, Fuel, FuelInjector, Piston } from './DI/Car';
     ContentParentComponent,
     ErrorCmp,
     ViewEncapsulationDemoComponent,
-    MyCarComponent
+    MyCarComponent,
+    ParentDIComponent,
+    Child1DIComponent,
+    Child2DIComponent
     // SampleDirective
   ],
   imports: [
@@ -75,7 +82,8 @@ import { Car, Engine, Fuel, FuelInjector, Piston } from './DI/Car';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [{provide: ErrorHandler, useClass: GlobalErrorHandler}, Fuel, FuelInjector, Engine, Car,Piston],
+  providers: [{provide: ErrorHandler, useClass: GlobalErrorHandler}, 
+    Fuel, FuelInjector, Engine, Car,Piston, GenerateRandom],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
