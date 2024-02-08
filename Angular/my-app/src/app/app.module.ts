@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello-world.component';
 import { EventBindingDemoComponent } from './event-binding-demo/event-binding-demo.component';
-import { FormsModule } from '@angular/forms';
 import { BindingsDemoComponent } from './bindings-demo/bindings-demo.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
@@ -43,6 +44,9 @@ import { UseClassDemoComponent } from './use-class-demo/use-class-demo.component
 import { UseFactoryDemoComponent } from './use-factory-demo/use-factory-demo.component';
 import { UseValueDemoComponent } from './use-value-demo/use-value-demo.component';
 import { InjectionTokenDemoComponent } from './injection-token-demo/injection-token-demo.component';
+import { TemplateFormsComponent } from './template-forms/template-forms.component';
+import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
+import { FormsModule} from '@angular/forms';
 
 
 
@@ -82,13 +86,17 @@ import { InjectionTokenDemoComponent } from './injection-token-demo/injection-to
     UseClassDemoComponent,
     UseFactoryDemoComponent,
     UseValueDemoComponent,
-    InjectionTokenDemoComponent
+    InjectionTokenDemoComponent,
+    TemplateFormsComponent,
+    ReactiveFormsComponent
     // SampleDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
+    
   ],
   providers: [{provide: ErrorHandler, useClass: GlobalErrorHandler}, 
     Fuel, FuelInjector, Engine, Car,Piston, GenerateRandom],
