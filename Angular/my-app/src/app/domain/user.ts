@@ -5,6 +5,6 @@ export class User
     notificationMode!: string;
     email!: string;
     mobileNumber!: string;
-    favoriteLocation!: string;
+    favoriteLocation!: string[];
 
 }
