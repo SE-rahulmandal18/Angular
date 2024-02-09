@@ -1,0 +1,28 @@
+<form [formGroup]="form" (submit)="save()">
+  <p>Find a free username</p>
+
+  <input
+    style="width: 220px"
+    type="text"
+    formControlName="name"
+    placeholder="Search a free username (min 3 chars)"
+  >
+
+  <button [disabled]="form.invalid || form.pending">
+    Send
+    <span *ngIf="form.get('name')?.pending">(searching)</span> <!-- Add safe navigation operator here -->
+  </button>
+
+  <p style="color: red" *ngIf="form.get('name')?.errors?.['userNameExist']; else successTemplate">
+    User Name already Exist
+</p>
+
+
+  <hr>
+
+  <ng-template #successTemplate>
+    works
+  </ng-template>
+
+  <small>NOTE: Bret, Samantha, Karinne are already taken. Try others.</small>
+</form>

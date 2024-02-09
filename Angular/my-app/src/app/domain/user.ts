@@ -1,7 +1,10 @@
 export class User
 {
-    firstName:string="";
-    lastName:string="";
-    email:string="";
-    password:string="";
+    username!: string;
+    password!: string;
+    notificationMode!: string;
+    email!: string;
+    mobileNumber!: string;
+    favoriteLocation!: string;
+
 }

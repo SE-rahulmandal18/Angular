@@ -47,6 +47,10 @@ import { InjectionTokenDemoComponent } from './injection-token-demo/injection-to
 import { TemplateFormsComponent } from './template-forms/template-forms.component';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 import { FormsModule} from '@angular/forms';
+import { ValueStatusChangesComponent } from './value-status-changes/value-status-changes.component';
+import { ConditionalValidationComponent } from './conditional-validation/conditional-validation.component';
+import { AsyncValidationComponent } from './async-validation/async-validation.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -88,14 +92,18 @@ import { FormsModule} from '@angular/forms';
     UseValueDemoComponent,
     InjectionTokenDemoComponent,
     TemplateFormsComponent,
-    ReactiveFormsComponent
+    ReactiveFormsComponent,
+    ValueStatusChangesComponent,
+    ConditionalValidationComponent,
+    AsyncValidationComponent
     // SampleDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule 
     
   ],
   providers: [{provide: ErrorHandler, useClass: GlobalErrorHandler}, 
