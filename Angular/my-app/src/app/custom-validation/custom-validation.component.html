@@ -1,0 +1,50 @@
+
+<h1>Angular : Reactive Forms </h1>
+<form [formGroup]="validateForm" (ngSubmit)="register(validateForm)" novalidate>
+
+  <p> Is "validateForm" valid? {{(validateForm.valid?'Yes':'No')}} </p>
+
+  <div>
+    <label>Name</label>
+    <input type="text" name="name" formControlName="name" required>
+    <errors [control]="validateForm.controls.name"></errors>
+  </div>
+
+  <div>
+    <label>Email</label>
+    <input type="text" name="email" formControlName="email"
+           required email-validate>
+    <errors [control]="validateForm.controls.email"></errors>
+  </div>
+
+  <div>
+    <label>Age</label>
+    <input type="number" name="age" formControlName="age"
+           required age-validate>
+    <errors [control]="validateForm.controls.age"></errors>
+  </div>
+
+
+  <div formGroupName="address">
+    <h3>Address</h3>
+    <div>
+        <label>Country</label>
+        <input type="text" name="Country" formControlName="country"
+           required minlength="5">
+           <errors [control]="validateForm.controls.address.controls.country"></errors>
+        </div>
+
+<div>
+    <label>City</label>
+    <input type="text"  name="city" formControlName="city" required>
+
+    <span *ngFor="let loc of getControls() | keyvalue; index as i ">
+        <errors [control]?="i"></errors>
+    </span>
+</div>
+</div>
+
+<pre>{{validateForm.value | json}}</pre>
+<button type="submit" [disabled]="validateForm.invalid">Submit</button>
+
+</form>

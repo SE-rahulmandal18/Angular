@@ -51,6 +51,8 @@ import { ValueStatusChangesComponent } from './value-status-changes/value-status
 import { ConditionalValidationComponent } from './conditional-validation/conditional-validation.component';
 import { AsyncValidationComponent } from './async-validation/async-validation.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CustomValidationComponent } from './custom-validation/custom-validation.component';
+import { SubmitToServerComponent } from './submit-to-server/submit-to-server.component';
 
 
 
@@ -95,7 +97,9 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsComponent,
     ValueStatusChangesComponent,
     ConditionalValidationComponent,
-    AsyncValidationComponent
+    AsyncValidationComponent,
+    CustomValidationComponent,
+    SubmitToServerComponent
     // SampleDirective
   ],
   imports: [
