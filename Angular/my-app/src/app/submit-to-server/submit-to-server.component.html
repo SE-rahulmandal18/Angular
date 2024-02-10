@@ -1,0 +1,20 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit" class="text-center border border-light">
+
+<p>Sign up</p>
+
+<div class="form-row mb-4">
+    <div class="col">
+        <input type="text" formControlName="firstName" id="defaultRegistrationFormFirstName" class="form-control" placeholder="First name">
+    </div>
+    <div class="col">
+        <input type="text" formControlName="lastName" id="defaultRegistrationFormLastName" class="form-control" placeholder="Last name">
+    </div>
+</div>
+
+<input type="email" formControlName="email" id="defaultRegistrationFormEmail" class="form-control" placeholder="E-mail">
+
+<button class="btn btn-info my-4 btn-block" type="submit">Sign in</button>
+
+<hr>
+
+</form>
