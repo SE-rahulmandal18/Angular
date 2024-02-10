@@ -53,6 +53,9 @@ import { AsyncValidationComponent } from './async-validation/async-validation.co
 import { HttpClientModule } from '@angular/common/http';
 import { CustomValidationComponent } from './custom-validation/custom-validation.component';
 import { SubmitToServerComponent } from './submit-to-server/submit-to-server.component';
+import { AgeValidatorDirective } from './AgeDirective';
+import { EmailValidatorDirective } from './EmailDirective';
+import { ErrorsComponent } from './Errors.component';
 
 
 
@@ -99,6 +102,9 @@ import { SubmitToServerComponent } from './submit-to-server/submit-to-server.com
     ConditionalValidationComponent,
     AsyncValidationComponent,
     CustomValidationComponent,
+    ErrorsComponent,
+    AgeValidatorDirective,
+    EmailValidatorDirective,
     SubmitToServerComponent
     // SampleDirective
   ],
