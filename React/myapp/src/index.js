@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './Forms in React/App';
 // import App from './time excercise/App';
 // import App from './styling in react/App';
 // import App from './Lifting state up/App';
