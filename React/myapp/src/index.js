@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+
 // import FunctionalComp from './simple components demos/FunctionalComp';
 // import ClassBasedComp from './simple components demos/ClassBasedComp';
 // import JSXDemo from './jsx demos/JSXDemo';
-import App from './simple props demo/App';
+// import App from './simple props demo/App';
+import App from './states in react/App';
 
 // Parent Component
 // function App() {
@@ -21,5 +23,5 @@ import App from './simple props demo/App';
 // }
 
 ReactDOM.render(
-  <App />, document.querySelector("#root")
+  <App/>, document.querySelector("#root")
 );
