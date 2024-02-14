@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './conditional rendering demo/App';
+import App from './list rendering demo/App';
+// import App from './conditional rendering demo/App';
 
 
 // import FunctionalComp from './simple components demos/FunctionalComp';
@@ -24,5 +25,6 @@ import App from './conditional rendering demo/App';
 // }
 
 ReactDOM.render(
-  <App />, document.querySelector("#root")
+  <App/>, document.querySelector("#root")
 );
+
