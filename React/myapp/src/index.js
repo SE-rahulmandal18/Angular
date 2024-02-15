@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
-import App from './react router/App';
+import App from './Context API/App';
+// import { BrowserRouter } from 'react-router-dom';
+// import App from './react router/App';
 // import App from './Forms in React/App';
 // import App from './time excercise/App';
 // import App from './styling in react/App';
@@ -31,6 +32,9 @@ import App from './react router/App';
 // }
 
 ReactDOM.render(
- <BrowserRouter> <App/>, </BrowserRouter>, document.querySelector("#root")
+//  <BrowserRouter> <App/>, </BrowserRouter>, document.querySelector("#root")
+
+    <App/>, document.querySelector("#root")
+
 );
 
