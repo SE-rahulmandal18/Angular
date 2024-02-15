@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios';
 
 class ControlledForm extends Component {
 
@@ -40,9 +41,29 @@ class ControlledForm extends Component {
 
     handleFormSubmit = (event) => {
 
-        console.log(`User Name: ${this.state.userName} 
-         Comments: ${this.state.comments} 
-         Topic: ${this.state.topic}`);
+        // console.log(`User Name: ${this.state.userName}  Comments: ${this.state.comments}  Topic: ${this.state.topic}`);
+
+        let { userName, comments, topic } = this.state;
+        let data = {
+
+            "userName": userName,
+            "comments": comments,
+            "topic": topic
+        }
+
+        axios.post(`http://localhost:3005/users`, data)
+            .then(
+                response => {   //console.log(response)
+
+                    if(response.status === 201) {
+                        console.log(response.data);
+                    }
+                } 
+            )
+            .catch(
+                error => console.log(error)
+            );
+
         event.preventDefault();
     }
 
