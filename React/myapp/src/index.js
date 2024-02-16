@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 // import App from './HigherOrderComponent/App';
-import App from './hooks in react/App';
+// import App from './hooks in react/App';
 // import App from './Pure Components/App';
 // import App from './Context API/App';
 // import { BrowserRouter } from 'react-router-dom';
 // import App from './react router/App';
-// import App from './Forms in React/App';
+import App from './Forms in React/App';
 // import App from './time excercise/App';
 // import App from './styling in react/App';
 // import App from './Lifting state up/App';
