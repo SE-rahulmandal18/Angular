@@ -1,8 +1,7 @@
 // /* eslint-disable react/prop-types */
 import styles from "./Item.module.css";
 
-const Item = ({ foodItem, handleBuyButtonClicked}) => {
-  
+const Item = ({ foodItem, bought, handleBuyButtonClicked }) => {
   // let {foodItem} = props
 
   // const handleBuyButtonClicked = () => {
@@ -11,16 +10,15 @@ const Item = ({ foodItem, handleBuyButtonClicked}) => {
   // }
 
   return (
-
     // <li className={`${styles["kg-item"]} list-group-item`}>
-    <li className={`list-group-item`}>
+    <li className={`list-group-item ${bought && "active"}`}>
       <span className={styles["kg-span"]}>{foodItem}</span>
 
       <button
         // onClick={() => console.log(`${foodItem} beign bought`)}
         // onClick={(event) => handleBuyButtonClicked(event) }
 
-        onClick={handleBuyButtonClicked }
+        onClick={handleBuyButtonClicked}
         className={`${styles.button} btn btn-info`}
       >
         Buy
