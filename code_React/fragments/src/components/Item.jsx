@@ -1,14 +1,14 @@
 // /* eslint-disable react/prop-types */
 import styles from "./Item.module.css";
 
-const Item = ({ foodItem }) => {
+const Item = ({ foodItem, handleBuyButtonClicked}) => {
   
   // let {foodItem} = props
 
-  const handleBuyButtonClicked = () => {
-    console.log(event);
-    console.log(`${foodItem} beign bought`)
-  }
+  // const handleBuyButtonClicked = () => {
+  //   console.log(event);
+  //   console.log(`${foodItem} beign bought`)
+  // }
 
   return (
 
@@ -18,7 +18,9 @@ const Item = ({ foodItem }) => {
 
       <button
         // onClick={() => console.log(`${foodItem} beign bought`)}
-        onClick={(event) => handleBuyButtonClicked(event) }
+        // onClick={(event) => handleBuyButtonClicked(event) }
+
+        onClick={handleBuyButtonClicked }
         className={`${styles.button} btn btn-info`}
       >
         Buy
