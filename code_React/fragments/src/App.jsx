@@ -23,8 +23,9 @@ function App() {
   // let [foodItems, setfoodItems] = useState(["Sabzi", "Dal", "Ghee", "Papaya"]);
 
   // To Display Error component message , empty the array
-  let [foodItems, setfoodItems] = useState([])
+  let [foodItems, setfoodItems] = useState([]); // states
 
+  // states
   const onKeyDown = (event) => {
     if (event.key === "Enter") {
       let newFoodItem = event.target.value;
