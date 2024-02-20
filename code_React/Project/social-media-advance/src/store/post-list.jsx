@@ -51,17 +51,20 @@ const PostListProvider = ({ children }) => {
     });
   };
 
-  const deletePost = (postId) => {
-    // console.log(`delete post called for ${postId}`);
+  const deletePost = useCallback(
+    (postId) => {
+      // console.log(`delete post called for ${postId}`);
 
-    dispatchPostList({
-      type: "DELETE_POST",
+      dispatchPostList({
+        type: "DELETE_POST",
 
-      payload: {
-        postId,
-      },
-    });
-  };
+        payload: {
+          postId,
+        },
+      });
+    },
+    [dispatchPostList]
+  );
 
   return (
     <PostList.Provider
