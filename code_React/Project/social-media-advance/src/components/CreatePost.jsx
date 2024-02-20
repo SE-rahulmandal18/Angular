@@ -60,7 +60,6 @@ const CreatePost = () => {
         </label>
         <textarea
           ref={postBodyElement}
-          Element
           rows="4"
           placeholder="Tell us more about it"
           type="type"
