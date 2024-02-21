@@ -18,7 +18,7 @@ function App() {
         <Sidebar selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
         <div className="content">
           <Header />
-         <Outlet/>
+          <Outlet />
 
           <Footer />
         </div>
