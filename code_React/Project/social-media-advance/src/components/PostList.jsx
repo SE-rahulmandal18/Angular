@@ -10,6 +10,7 @@ const PostList = () => {
 
   useEffect(() => {
     setfetching(true);
+    
     // console.log("fetchig started");
 
     const controller = new AbortController();

@@ -28,6 +28,7 @@ const PostListProvider = ({ children }) => {
   const [postList, dispatchPostList] = useReducer(postListReducer, []);
 
   const addPost = (userId, postTitle, postBody, reactions, tags) => {
+    
     // console.log(`${userId} ${postTitle} ${postBody} ${reactions} ${tags}`);
 
     dispatchPostList({
