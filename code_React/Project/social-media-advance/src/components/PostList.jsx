@@ -6,7 +6,7 @@ import LoadingSpinner from "./LoadingSpinner";
 
 const PostList = () => {
   const { postList, addInitialPost } = useContext(PostListData);
-  const [fethcing, setfetching] = useState(false);
+  const [fetching, setfetching] = useState(false);
 
   useEffect(() => {
     setfetching(true);
@@ -42,12 +42,12 @@ const PostList = () => {
 
   return (
     <>
-      {fethcing && <LoadingSpinner />}
-      {!fethcing && postList.length === 0 && (
+      {fetching && <LoadingSpinner />}
+      {!fetching && postList.length === 0 && (
         // <WelcomeMessage onGetPostsClick={handleGetPostsClick} />
         <WelcomeMessage />
       )}
-      {!fethcing && postList.map((post) => <Post key={post.id} post={post} />)}
+      {!fetching && postList.map((post) => <Post key={post.id} post={post} />)}
     </>
   );
 };
