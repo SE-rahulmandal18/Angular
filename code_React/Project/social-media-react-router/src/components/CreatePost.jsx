@@ -38,9 +38,10 @@ const CreatePost = () => {
       }),
     })
       .then((res) => res.json())
-      .then((post) => addPost(post));
-
-    navigate("/");
+      .then((post) => {
+        addPost(post);
+        navigate("/");
+      });
   };
 
   return (
