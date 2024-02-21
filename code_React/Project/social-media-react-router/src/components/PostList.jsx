@@ -10,10 +10,7 @@ const PostList = () => {
   return (
     <>
       {fetching && <LoadingSpinner />}
-      {!fetching && postList.length === 0 && (
-        // <WelcomeMessage onGetPostsClick={handleGetPostsClick} />
-        <WelcomeMessage />
-      )}
+      {!fetching && postList.length === 0 && <WelcomeMessage />}
       {!fetching && postList.map((post) => <Post key={post.id} post={post} />)}
     </>
   );

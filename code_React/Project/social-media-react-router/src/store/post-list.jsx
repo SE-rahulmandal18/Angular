@@ -1,6 +1,4 @@
-import { useEffect } from "react";
-import { useState } from "react";
-import { useCallback } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { createContext, useReducer } from "react";
 
 export const PostList = createContext({
@@ -29,19 +27,10 @@ const postListReducer = (currPostList, action) => {
 const PostListProvider = ({ children }) => {
   const [postList, dispatchPostList] = useReducer(postListReducer, []);
 
-  const addPost = (userId, postTitle, postBody, reactions, tags) => {
-    // console.log(`${userId} ${postTitle} ${postBody} ${reactions} ${tags}`);
-
+  const addPost = (post) => {
     dispatchPostList({
       type: "ADD_POST",
-      payload: {
-        id: Date.now(),
-        title: postTitle,
-        body: postBody,
-        reactions: reactions,
-        userId: userId,
-        tags: tags,
-      },
+      payload: post,
     });
   };
 
@@ -56,8 +45,6 @@ const PostListProvider = ({ children }) => {
 
   const deletePost = useCallback(
     (postId) => {
-      // console.log(`delete post called for ${postId}`);
-
       dispatchPostList({
         type: "DELETE_POST",
 
@@ -73,7 +60,6 @@ const PostListProvider = ({ children }) => {
 
   useEffect(() => {
     setfetching(true);
-    // console.log("fetchig started");
 
     const controller = new AbortController();
     const signal = controller.signal;
@@ -83,23 +69,19 @@ const PostListProvider = ({ children }) => {
       .then((data) => {
         addInitialPost(data.posts);
         setfetching(false);
-        // console.log("fetched returned");
       });
 
     return () => {
-      // console.log("Cleaning up UseEffect");
       controller.abort();
     };
-
-    // console.log("fetched ended");
   }, []);
 
   return (
     <PostList.Provider
       value={{
         postList: postList,
-        fetching: fetching,
         addPost: addPost,
+        fetching: fetching,
         deletePost: deletePost,
       }}
     >
