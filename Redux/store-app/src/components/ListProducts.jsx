@@ -23,7 +23,7 @@ export class ListProducts extends Component {
 
   render() {
     return (
-      <table className="table table-striped table-bordered table-hover">
+      <table className="container table table-striped table-bordered table-hover">
         <thead>
           <tr>
             <th>ID</th>

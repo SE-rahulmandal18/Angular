@@ -60,7 +60,8 @@ export class AddProduct extends Component {
 
   render() {
     return (
-      <form onSubmit={this.addProduct} ref={this.addProductForm}>
+      <form className="container" onSubmit={this.addProduct} ref={this.addProductForm}>
+        
         <div className="form-group">
           <label>Enter the ID:</label>
           <input

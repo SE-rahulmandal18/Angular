@@ -17,12 +17,6 @@
       "name": "Pizza",
       "price": 4,
       "location": "Refrigerated foods"
-    },
-    {
-      "id": "4",
-      "name": "Chocolate",
-      "price": 1.5,
-      "location": "the snack isle"
     }
   ]
 }
