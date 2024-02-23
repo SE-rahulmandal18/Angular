@@ -1,0 +1,37 @@
+{
+"products": [
+  {
+    "id": 1,
+    "name": "Cheese",
+    "price": 2.50,
+    "location": "Refrigerated foods"
+  },
+
+  {
+    "id": 2,
+    "name": "Crips",
+    "price": 3,
+    "location": "the snack isle"
+  },
+
+  {
+    "id": 3,
+    "name": "Pizza",
+    "price": 4,
+    "location": "Refrigerated foods"
+  },
+
+  {
+    "id": 4,
+    "name": "Chocolate",
+    "price": 1.50,
+    "location": "the snack isle"
+  },
+  {
+    "id": 5,
+    "name": "self-raising flour",
+    "price": 1.50,
+    "location": "the snack isle"
+  }
+]
+}
