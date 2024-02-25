@@ -1,0 +1,1219 @@
+git commands :
+
+git init
+git status
+git add .
+git commit -m "angular"
+git remote add origin https://github.com/SE-rahulmandal18/Angular.git
+
+git branch main -M
+git push -u origin main
+
+git fetch origin main:tmp
+git rebase tmp
+
+git pull -u origin main
+git pull origin main --allow-unrelated-histories
+
+
+To remove a folfer from git repo
+ git rm -rf --cache folder_Name
+
+---------------------------------------------------------------
+
+
+Day 1:
+
+
+Website :
+collection of web pages
+Static 
+Dynamic
+
+
+What is single Page Aapplications: 
+
+website -  exhibit a behavior of UI - end user -
+           it site is made of 1 page only
+
+---------------------------
+
+SPA Features 
+
+1. ther is no change in the url/ partial change
+2. there is no page refresh / reload
+
+--------------------------
+
+SPA devlopement:
+
+-RAW Javascript is not adequate
+-Javascript based lib / framework for SPA dev
+
+1. React 
+2. Angular  - Maintained by Google - open source
+3. Vue.js
+4. Amber.js
+5. Solid.js
+
+------------------------------
+
+Angular15: (clinet side programing not a server side prog)
+
+You can do programing in angular using
+ 1.DART
+ 2.Typescript
+
+--------------------------------
+
+Why not JavaScript ?
+
+1. lack of datatypes 
+2. type coerscion issues / typecasting issues
+3. errors will be disaplayed only after you run the code
+
+---------------------------------------
+
+Transpilation :
+
+ is special form of compliation - source cose is compiled
+                     to another form of source code.
+
+compilation - source code -> binary/ machine / byte..
+
+browser don't understand JS
+   your TS prog. transpiled into JS
+
+----------------------------------------
+
+
+npm i -g typescript
+
+tsc -> typescript compliler
+
+--------------------------------------
+
+angluar CLI - commands line interface
+
+-you create build, run, test, deploy angular app
+   using angular CLI
+
+npm i <<package-name>> ->downloada and install latest version of
+
+npm --version -> version of npms
+
+------------------------------------------
+steps: to create Angular project
+
+1. download and install angular CLI
+    npm i -g @angular/cli
+    
+   version of angular CLI
+    ng version or ng --version
+
+   cmd for creating angular project
+   ng new <<projectname>>  --no-standalone(for module.ts file)
+
+
+----------------------------------------
+
+how to create comp in Angular
+
+1. ng g c <<component-name>>
+
+----------------------------------------
+
+DAY:2 
+
+
+5 data type in TS
+
+String
+number
+bool
+undefined
+null
+
+derived from super d/t = any
+
+----------------------------------------
+
+Angular has multiple predefined decorator
+
+@ Component, @Directive, @Pipe, @HostListner, @HostBinding, @ViewChild, @ContentChild, @ViewChildren, @ContentChildren, @Inject, @Injectable, @Optional, @SkipSelf
+
+--------------------
+
+Decorators gives metadata info
+
+if you want to access the class form another file -> you
+need go export the class and thn import it
+
+-------------------------------
+
+template = small html
+
+templateUrl = write a HTML file and refer 
+
+ style = small css
+ 
+ styleUrls = write a CSS file and refer 
+
+-------------------------------------
+
+
+@Component({
+
+selector : 'parent-cmp' // some string
+)}
+
+- selector will be used for laoding the cmp as a custom tag
+<parent-cmp></parent-cmp>
+
+
+
+- for eg. 3 component -> parent, child, grand-child
+       app-grand-child will be loaded by chid which is loaded  by parent which is loaded by root componet(app-component.html)
+
+-------------------------------------------------------
+
+Binding w.r.t comps :
+
+1. one way binding:
+    data is transferred from model to view
+    i.e data is tranferred from comp to view
+e.g:
+     {{firstName}} => interpolation / expression 
+    
+     <input type="text" value={{firstName}}>
+
+     <input type="text" [ngModel]=firstName>
+    
+
+2. two way binding:
+   [(ngModel)] - is a directive to transfer data from
+                view to model& vice-versa
+                "banana in the box"
+
+
+3. event binding - attaching event to Angular
+    (click) = f1() => event binding
+
+attach a method / function in JS to a button:
+
+<input type="buton" onclick="f1()">
+
+in html:
+   f1()
+   {}
+
+in Angular:
+<input type="buton" (click)="f1()"> 
+
+<input type="textbox" (keypress)="f2()"> 
+
+<p (mousemove)="f3()"> </p> 
+
+<input type="buton" (click)="f1()"> 
+
+
+when you need to get events details
+ -name of the events...
+ -parameter of the events..
+
+i. eventDetails
+       $event -> is reserved word - event Details
+
+
+4. property binding
+   i.   style binding
+          
+      -angular way of applying CSS via style binding
+
+      <span [style.font.px]=20> you have logged in</span>
+ 
+   ii.  class binding
+
+    <p [class] = 'name of the CSS class'> you have logged in </p>
+
+  
+   iii. attribute binding
+ 
+
+
+-------------------------------------------------------
+
+
+DAY - 3:
+
+in most cased -> we use attribute directive of Angular
+1. ngClass
+2. ngStyle
+           for Attaching CSS properties
+
+----------------------------------------------
+
+property binding :
+
+communication b/w angular comps.
+
+parent comp to child = @Input()
+
+child comp to parent = @Output()
+
+b/w sibilngs
+
+any comp to any other comp - irrespective of hierarchies
+
+i.  RXJS with services
+ii. 3 party lib - Redux /NGX..
+
+--------------------t--------------------------
+
+Parent comp
+
+child
+
+1. pass data from parent to child
+
+1. in child comp - make some provision to recieve the data from the parent
+i. @Input() tile: string="";
+ii. in parent comp -> load the child -> using selector
+     <app-child [tile]='"data from parent"'></app-child>
+
+
+----------------------------------------------
+
+ pass data from  child parent to
+
+in child:
+1.@Output decorator -> pass the info  /  data outside the comp
+2.EventEmitter - is a generic class that is used to create custom events
+ 
+a) create a custom event and trigger that event -> pass the data /eimit data outsise the comp.
+
+ - child comp is the publisher / sender
+
+b) subscribe -> i.e parent => has to subscribe / listen to the              
+         CUSTOM event -> when the event is fired -> you can get the data
+-   parent comp is the reciever / consumner / subscriber
+
+
+----------------------------------------------
+
+Attribute Binding:
+<th [attr.colspan]='columnSpan'>
+
+----------------------------------------------
+
+Bootstraping of an angular app ?
+
+behind the scenes w.r.t compliation of angular app
+
+1. when the angular app is loaded onto the browser ->
+   stops @<app-root> as it is a user defined tag
+
+2. angular runtime is loaded..
+
+3. angular runtime -> get the app config details from the
+   angular.json
+
+a. landing page
+b. enty point for the app -> main.ts
+c. in main.ts ->bootstrap -> app module
+d. in app.module.ts => 
+    [bootstrap] = root comp name i.e appcomponent
+
+e. root comp is loaded -> 
+     other comps in hierarchy are loaded 
+
+
+----------------------------------------------
+
+DAY 4:
+
+
+Directives
+
+1. reusability
+    i. dom manipulation 
+    ii. validation
+
+what is the relationship b/w directives and comps ?
+1. comps r derive from directives
+2. directives cannot RUN on their own -> LOAD them on comp
+3. one comp can load many directives
+
+2 types of directives:
+
+i. structural directives -> modify the DOM structure
+ii.attribute directives -> modify the UI
+
+predifined structural directives
+ *ngFor     -> for loop
+ *ngIf      -> if...else..
+ *ngSwitch  -> switch
+ are used in TEMPLATE(UI) -> html
+
+
+predefined attribute directives
+
+custom structural directives 
+custom attribute directives
+
+------------------------------------
+
+*ngif
+
+else / else if -> define a template
+
+template -> group / selection of html tags
+
+<ng-template>
+<ng-container>
+
+------------------------------------
+
+<ng-template #templateName>
+    you can have some tags
+    you can have some messages
+
+</ng-template>
+
+you will have to call exlicitly -> using templateName
+
+<ng-template #templateName1>
+   <h1>
+   <p>
+   <img>
+</ng-template>
+
+<ng-template #templateName2>
+   <span>
+   <div>
+  <a href>
+
+<ng-template>
+
+then....
+
+   <div *ngIf="isValid; then templateName1 else templateName2">
+              
+   </div>
+
+
+------------------------------------
+
+
+
+------------------------------------
+
+
+angular has an issue w.r.t DOM.........
+
+angular unload the Table tag & reloading the table...
+
+if you are displaying large datasets.....-> always use trackby
+feature -> tell angular NOT  to unnecessarily reload entire DOM.
+
+--------------------------------------------------
+
+
+attribute directives -> channge the ui / ux, modify the appreance of the tag
+
+1. ngStyle -> used to apply css to tags
+
+2. ngClass -> app external CSS
+ 
+--------------------------------------------------
+
+can we create custom attribute directive ? -> YES
+
+Rules of directive in Angular :-
+
+1. comp have to laod the directive as directiive can't load on their own
+2. 1 tag can load only 1 structural directives
+3. 1 tag can load only multiple attribute directives
+
+4. while creating custom directives
+   i. define class -> decorate with @Dirctive()
+   ii.@Directive({ selector: ''}) -> seclector that is used for calling the 
+                                     directive
+
+  iii. custom directives has to be registered in app.module.ts in declration[]
+   section
+
+--------------------------------------------------
+
+ElementRef -> access to the TAG (Host Element)
+Renderer2 -> apply the CSS to the (Host Element)
+
+@HostListener -> listening to events that are fired by the host element
+@HostBinding  -> css styles binding in Directives
+
+
+--------------------------------------------------
+
+
+DAY 5:
+
+Pipes -:
+
+DataTrasformation ->
+
+1) conversion of data
+    - converting data into other locales
+
+2) formating of data
+ 
+date-time = extract time,date , number
+uppercase
+lowercase
+capitalcase
+
+--------------------------------------------------
+
+predefined pipes
+
+uppercase
+lowercase
+decimal
+currency
+keyval
+json
+async
+date
+
+all predefined pipes defined in @angular/common
+
+
+-----------------------------------------------------
+
+creating custom Pipes :
+
+use case:
+1. sorting data
+2. filter data / search data
+3. truncating data
+4. reverse - math ops/string ops
+
+-----------------------------------------
+Rule of custom Pipe
+
+1. define class that implements PipeTransform -> transform
+2. Decorate the calss with @Pipe
+3. register the class in
+
+
+------------------------------------
+
+transform(value: any, ...args: any[]): any
+
+...args = Restful args in JS/TS
+
+
+------------------------------------
+
+2 types of pipes
+
+pure pipes-> stateless by defaultb -> execute when the pure 
+primitive value changes
+
+impure pipe ->stateful by default -> execute for every change detection
+
+By default ALL predefined pipes are stateless
+
+except async - stateful
+
+---------------------------------------------------
+
+sort the data -> for which I use
+
+   pure pipe
+   impure pipe
+
+Pure pipes are the pipes which are executed only when a “PURE CHANGE” to the input value is detected.
+
+So impure pipe executes everytime irrespective of source has changed or not. which leads to bad performance. thats why it is not recommneded to use pipes for filtering data.
+
+----------------------------------------------------------
+
+Apply more than 1 pipe on the data
+
+ {{ row | json | uppercase }}
+
+=> is known as chaining in pipes / pipe chaining
+
+----------------------------------------------------------
+
+Life cycle hooks angular in Angular :-
+
+   - are events that are fired by angular for 
+     components, directives, pipes etc...
+
+1. life cycle hooks are interfaces that you need to implement
+2. life cycle hooks are fired by angular.
+
+---------------------------------------------------------
+
+<p> Hello there ! </p>
+   -> content
+
+<p> Hello there ! 
+   <span> Hi ! </span>
+   <div> How r you </div>
+   <bold> Fine </bold>
+</p>
+   -> template
+
+--------------------------------
+
+if you want to access content of the tag
+subscribe to aftercontentinit
+ + @ContentChild / @ContentChildren 
+
+
+if you want to access template of the tag
+subscribe to aftercontentinit
+ + @ViewChild / @ViewChildren 
+
+-----------------------------------------------------
+
+
+DAY 6:
+
+Life cycle hooks :-
+
+ngOnInit()    -> initialization of variable, arrays, obj etc.
+
+ngOnChanges() -> 
+ 
+   @Input()  - value gets updated
+   @Output() - value gets updated
+
+   SimpleChange - old value and current value
+   SimpleChanges -
+  
+
+ngDoCheck()   -> customize the Change Dectection 
+ 
+ngOnDestroy()   ->  uninitialization of variable, arrays, obj etc.
+
+
+ngAfterContentInit() 
+ngAfterContentChecked()
+ngAfterViewInit()
+ngAfterViewChecked()
+
+interfaces.....
+
+----------------------------------------------------
+
+if you want to access a tag defined in template from
+your component code
+
+1. create the tag with template reference var
+<div #myDiv>this is content of the div</div> 
+
+2. in the comp @ViewChild('myDiv') vc;
+           +
+afterviewInit() -> fired when the DOM is loaded 
+
+
+-------------------------------------------------
+
+@ViewChild
+@ViewChildren
+
+
+1. if you want to access a tag defined in template from
+your component code
+
+2. parent comp wants to call the method defined in child
+
+-------------------------------------------------
+in app.component file :-
+
+<parent-comp> </parent-comp>
+this means load the parent comp
+
+<parent-comp> 
+ <span> Hello how are you! </span>
+ <child-comp> 
+ I am fine 
+ </child-comp>
+
+</parent-comp>
+
+
+if you want to access the content of span tag 
+or
+if you want to access the content of child-comp
+
+you need to enable in angular
+
+<ng-content> </ng-content> in template
+
+and then you access the data using
+
+@ContentChild()
+@ContentChildren()
+   + aftercontentinit
+
+--------------------------------------------------------
+
+
+Error handling :-
+
+starting from Angular 10 onward, error handeling -it has made
+more concise and licid....
+
+1. you get errors inide the template -> strict template
+2. most of errors - have error# assocaited
+
+typescript errors have TS
+aB=ngular errors have NG
+
+3. server related errors -> IErrorHandler -> handling all exception globally in the app
+
+4. try....catch
+
+------------------------------------------------------
+
+Services class -> participate in DI and offer some services
+
+1. class abc implements IErrorHandler
+{
+   handleError() {}
+}
+
+
+------------------------------------------------------
+
+View Encapsulation -
+
+scoping of CSS is controlled by ViewEncapsulation
+
+
+----------------------------
+
+we have gloabal css file i.e style.css & some css is defined
+
+----------------------------
+
+component level css
+
+for every comp that is created->
+
+a.css => define my css style here
+
+--------------------------------------------
+
+in case the css selector nams are same both in gloabal css
+cmp level css
+
+1. both css wil be applied -> css in inherited
+
+2. comp level css will override global css
+
+because the default css scoping behavior -i.e viewencapsulation
+is set to emulated
+
+encapsulation:viewEncapsulation.Emulated 
+encapsulation:viewEncapsulation.None
+encapsulation:viewEncapsulation..ShadowDom
+
+--------------------------------------------------------
+
+in case the css selector nams are same both in gloabal css
+cmp level css and css propeties are also same and 
+
+encapsulation:viewEncapsulation.None
+
+local css / comp level css will override global css
+  
+
+--------------------------------------------------------
+
+in case the css selector nams are same both in gloabal css
+cmp level css and css propeties are also same and 
+
+encapsulation:viewEncapsulation.ShadowDom
+
+local css / comp level css will override global css
+  
+outside the comp = gloabal css will be applied
+
++ ShadowRoot tag will be generated - that is used  for ShadowDom
+
+
+
+--------------------------------------------------------
+
+
+DI in Angular
+
+DI - is pattern => part of SOLID principles S/W
+
+container -> responsible fpr creating the instances
+
+1. promotes loose coupling
+2. helps in unit testing
+
+-----------------------------------------------------
+
+1. constructor based injection
+2. property based / getter-setter based injection
+3. interface based injection
+
+-----------------------------------------------------
+
+Angular DI important concept
+
+1. Angular DI - constructor based injection
+2. Angular DI - hierarchial DI
+3. Angular has its own IOC / Container that is resposible
+   for providing dependencies
+
+4. Class have to be services class ->
+
+All the classes have to decorated with @Injectable()
+
+5. parts of DI 
+i. service class -> dependency
+ii. provider -> which type of object to be created , where to inject
+
+ii. injector class -> creating the obj and injecting the
+         depenencies
+where => dependencies can be injected into
+a. comps
+b. directives
+c. pipes
+d. service class
+
+iv. every comp -  has its own Injector obj
+
+
+
+-----------------------------------------------------
+
+DAY 7:
+
+DI in Angular -
+
+if you register the service class in [providers] of App.module.ts
+
+= it will create a Singleton obj
+
+--------------------------------------------------------
+
+if you register the service class in [providers] of App.module.ts
+
+= it will create a comp specfic instance / transient obj
+
+--------------------------------------------------------
+
+there is no providers[] in app.module.ts but still you want to
+create singleton instance
+
+then use providedIn: 'root'
+
+import { Injectable } from '@angular/core';
+
+@Injectable({
+    providedIn: 'root' -> Hamburger service class is registered
+globally and will result in singleton instance
+})
+export class Hamburger 
+{
+
+} 
+
+-------------------------------------------------------
+
+
+
+-------------------------------------------------------
+
+
+DAY 8:-
+
+Forms Programming :-
+
+1. All the classes/ apis related Forms programming is avalibale in
+@angular/forms package
+
+2. 2 module for Forms programing
+
+FormsModule
+ReactiveForms Module
+
+these modules have to be imported in imports[] in app.module.ts
+
+3. 2 types of forms in angular
+
+a) Template forms
+
+always have a template ref variable defined
+#signup = ngForm
+
+
+
+
+b) Reactive Forms
+
+--------------------------------------------------
+
+classes used in Forms programming
+
+a. NgForm    -> represents the <form> -> used to acces the forms control like textboxes, radio, checkboxes, button etc.
+
+b. FormControl -> denotes controls like textboxes, radio, checkboxes, button etc.
+
+c. FormArray  -> array of controls
+
+d. FormBuilder -> build the form controls & inject them into angular
+
+e. FormGroup  -> collection of controls -> group the controls based on their common theme ->
+
+address
+name
+tech
+
+
+f. Validator/Validators -validations
+
+synch validations
+asynch validations
+
+AsynchValidator - asynch validations
+
+AbstractControls -> base class for the controls i.e
+
+FromControl derives from AbstractControl
+
+--------------------------------------------------------
+
+
+predefined form diectives in angular
+
+1. touched/ untoched => indicate wether the control got focus / lost focus
+   
+   onfocus/onblur = in js
+
+
+2. dirty/ pristine  => indicate wether the value of the control got on changed or not
+
+3. isvalid/ invalid  => wether the textbox passed through validation or not / indicate wether the validation rule applied for the control is passed or not
+
+ return bool true/false
+ 
+4. errors =>list of validation errors fired by the validation rule of that control
+
+ erros => 1 validation errors fired by the validation rule of that control
+
+disabled / enabled
+
+-----------------------------------------------------------
+
+<span *ngIf="form['firstName'].errors && form['firstName'].errors['required']">
+                First name is required
+            </span>
+
+the above one is same as :
+
+  <span *ngIf="this.signiupForm.firstNme.errors &&
+this.signiupForm.firstNme.errors.requreid">
+   First name is required
+            </span>
+
+
+define a getter()
+
+get fN{
+        
+}
+
+-----------------------------------------------------------
+
+Reactive Forms : ReactiveFormModule package
+
+Reactive Forms ->
+1. use FormGroup => collection of controls
+2. FormGroup -> can be nested
+3. 1 main FormGroup and rest can be nested
+
+-----------------------------------------------------------
+
+how to add / attach custom validations in Angular From
+
+1. create a js function with validations logic and export
+
+2. create a class in JS/TS with validation methods
+
+3. import the finction in comp and add / attach custom validations
+
+or 
+
+3rd party libraries
+    1. yup
+    2. AJX
+
+
+For combining custom validations with predefined libraries
+
+you can use Validators.compose()
+
+this.loginForm = formBuilder.group({    
+                   emial: ['', Validators.compose([Validators.required,
+CustomValidators.emailValidators])],
+           password : ['', Validators.required]
+  });
+
+
+-----------------------------------------------------------
+
+with React Froms
+
+1 approch
+
+constructor() {
+this.
+
+
+-----------------------------------------------------------
+
+
+approch 2
+
+
+
+-----------------------------------------------------------
+
+DAY 9:
+
+5) Conditional validation
+
+valueChanges - whenever the value of the control is updated / changed
+angular will tell you
+
+statusChanges - whenever the validations status of control changes,
+angular will tell you
+
++
+
+conditional validation
+
+setValidators - apply dynamic conditional validations
+
+updateValueAndValidity() = update the validation rules
+
+
+-----------------------------------------------------------
+
+custom attribute directive - use case is implement validations
+
+define a comp that can cathch all the validations errors and display them
+
+directive for age validations
+directive for email validations
+
+
+-----------------------------------------------------------
+Asynchronous Validations
+
+
+--------------------------------------------
+
+how to submit data to server (jsp/servlet/ asp.net/python/perl)
+
+1) use httpclient class => @angular/common/http
+
+2) httpclient is part of httpclient module -> has to be refrerenced in imports[] in app.module.ts
+
+3) http.get
+   http.put
+   htpp.patch.........
+
+4) using -> RXJS 
+
+5) 
+CORS error -> Cross Origin Resource sharing are implented using
+http http headers @ server side , so whenever we make a req 
+through the browser -> the server environment will send the CORS
+headers to the client browsers .
+
+2) proxies
+
+proxy.config.json
+
+
+ng serve --proxy-config proxy.config.json --open
+
+or
+
+add in angular.json
+
+or 
+
+in package.json
+
+
+--------------------------------------------------
+
+DAY 10:
+
+NEW FEATURES IN Angular :
+
+
+1) youtube component :
+
+npm install @angular/youtube-player
+
+
+ YouTubePlayerModule -> import in imports[] in app.module.ts
+
+--------------------------------------------------
+
+2) google maps component :
+
+npm i @angular/google-maps
+
+<google-map></google-map>
+
+--------------------------------------------------
+
+
+3) strict mode
+
+a) property / var is Null
+b) property / var is undefined
+c) property / var is uninitialized
+
+
+by default when the app is created -> strict mode is turned on
+
+--------------------------------------------------------------
+
+The Angular non-null assertion operator causes the TypeScript
+type checker to suspend strict null and undefined checks for a
+specfic property expression
+
+Age!:number;
+
+----------------------------------------------------------------
+
+
+The nullish coalesicing operator (??) is a logical operator that
+returns its right-hand side operand when its left-hand side
+operand is null or undefined, nd otherwise return its left-hand
+side operand.
+
+{{imageURL !== null && imageURL !== undefined? imageURL :
+defaultImageURL}}
+
+above code can be written by using nullisg coalescing operator
+
+{{ this.imageURL ?? this.defaultImageURL }}
+
+---------------------------------------------------------
+Ex 2: The nullish coalesicing operator (??)
+
+{{ age !== null && age !== undefined ? age : calculateAge() }}
+
+above code can be written by using nullisg coalescing operator
+
+{{ age ?? calculateAge() }}
+
+---------------------------------------------------------------
+
+4) inject() function
+
+angular follows constructor based DI
+
+class Car
+{
+   constructor(private e:Engine) //constructor based DI
+}
+
+----------------------------
+
+1) What if i donot have a constructor?
+2) What if there is no class ?
+
+how to implement DI
+
+Injector.get("car")
+
+inject(engine) function
+
+-----------------------------------------
+
+5) standalone components
+   standalone Directives
+
+angular performance/compiler is slow
+
+app.module.ts -> no longer required.. and can be avoided
+
+----------------
+
+ng g c hello  --standalone
+
+or
+
+your entire app can be standalone app
+
+new ng my-app --standalone true
+
+-------------------------------------------------
+
+6) DCA - Directive composition API
+
+custom attribute => highlight - onmousemove
+
+<p appHighlight>
+
+----------------------------
+
+another custom attribute => border create
+
+<p appBorder>
+
+----------------------------------
+
+old style =>
+
+ <p appHighlight appBorder > hello </p>
+
+--------------------------------
+
+new style =>
+
+ combine the directive and call them as one
+
+ hostDirectives: [HighlightDirective, BordersamDirective]
+ 
+------------------------------------------------------
+
+7) typed form = generics form
+
+untyped form
+
+const login = new FormGroup({
+    email: new FormControl(''),
+    password: new FormControl(''),
+});
+
+
+const emailDomain = login.value.email.domain;
+
+----------------------------------
+
+typed form :
+
+const login = new FormGroup({
+    email: new FormControl<string|null>(null);
+    password: new FormControl<string|null>(null);
+});
+
