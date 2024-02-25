@@ -1,0 +1,103 @@
+DAY 1: 
+
+
+What is React ?
+
+- React is a JavaScript library for building user interfaces. It is the view layer for web applications.
+
+
+What is Component ?
+
+1. A component is a self contained module that renders some output.
+
+2. Independent peices of functionality.
+
+3. Describe a part of the UI app
+
+4. May containe a locally scoped 'state' obj.
+
+
+--------------------------------------------------------------------------
+
+The Stateless Component (Function based component) or Presentational Components :-
+
+1. These are simple JavaScript functions that accept props (short for "properties") and
+   
+ return React elements describing what should appear on the screen.
+
+2. They are also known as "stateless" or "dumb" components because 
+  
+they don't manage their own state or have access to lifecycle methods.
+
+
+import React from 'react';
+
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+
+export default Welcome;
+
+
+---------------------------------------------
+
+The StatefulComponent (Class Components) or Container Components :-
+
+1. These are JavaScript ES6 classes that extend from React.Component. 
+
+2.They are also called "stateful" or "smart" components because they can manage their own state and have access to lifecycle methods.
+
+3. The component re-renders based on the changes to its state and may pass down propeties of it's state to child components as properties on a props object.
+
+
+import React, { Component } from 'react';
+
+class Welcome extends Component {
+  render() {
+    return <h1>Hello, {this.props.name}</h1>;
+  }
+}
+
+export default Welcome;
+
+
+-----------------------------------------------------------------------------
+
+
+What does mounting mean ?
+
+Since we are defining virtual representation of nodes in our DOM tree with react, we are not actually defining DOM nodes.
+Instead we are building up in-memory view that React maintains and manages for us.
+
+When we talk about mounting, we're talking about the process of converting the virtual components into actual DOM elemnts that
+are placed in the DOM by react.
+
+
+-----------------------------------------------------------------------------
+
+Rest calls : 
+
+1) AJAX 
+2) Fetch
+3) Axios
+
+npm install --save axios
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

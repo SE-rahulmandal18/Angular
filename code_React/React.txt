@@ -1,0 +1,877 @@
+npm create vite@latest
+ npm install
+  npm run dev
+
+
+
+What is React ?
+
+1. JavaScript library to build Dynamic and interactive user interface
+
+2. Currently most widely used JS library for front-end development.
+
+3. Used to create single page application.
+
+
+
+
+
+DAY 2 : 
+
+To Create React application
+
+ -> npx create-react-app myapp
+
+src: Folder where we put all the source code we write
+
+public: folder that stores files like images.
+
+node_nodules: folder contains all our project dependencies
+
+package.json: Records our project dependencies and configure our project
+
+packages-lock.json: records the exact version of packages that we install.
+
+--------------------------------------------------
+import { ReactDOM } from "react";
+import React from "react";       
+   
+import -> keyword -  reach out the dependencies.
+   
+React -> the variable we want to assign to.(We can rename it to any name)         
+
+form -> full form dependency
+
+'react'-> dependency or path to dependency
+
+------------------------------------------------
+
+React Component Types:
+
+1. Function based component   (rfce) 
+
+a) Initially stateless.
+b) Can use Hooks for state and effects
+
+
+2. Class based component   (rce)
+
+a) Stateful - can manage state
+b) Lifecycle Access to lifecycle methods
+
+
+a) Must be JavaScript class
+b) Must extend(subclass) React.Component
+c) Must define a render method, return some JSX
+
+purpose:
+
+1. produces HTML to show users.
+2. Handle feedback from user - Event Handler 
+
+---------------------------------
+
+Transpiler convert : JSX to JS => http://bable.io
+
+What is JXS ?
+
+Special Dialect of JS(Its is not HTML)
+
+Browser dont understand JSX code . We wite JSX thn run tool to turn it into normal JS.
+
+HTML Syntax: <div style="background-color:red;"></div>
+JSX Syntax: <div style={{backgroundColor:'red'}}></div> // camel case
+
+--------------------------------------------------
+
+HTML Syntax: <div style="border:1px solid red;"></div>
+JSX Syntax: <div style={{border:'1px solid red'}}></div> camel case
+
+-------------------------------------------------------------
+
+props: are used to pass the data from parent comp to child comp
+
+-------------------
+
+destructuring example :   In function component
+
+import React from 'react'
+
+function Greet(props) {
+console.log({greet, message});
+  return (
+   <div>
+          <h1>{greet} Gyus...</h1>
+          <h2>{message}</h2>
+     </div>
+  )
+}
+
+export default Greet
+
+-------------------------------------------------------------
+
+destructuring example :   In Class component
+
+import React, { Component } from 'react'
+
+export class Greet extends Component {
+  render() {
+ 
+    // OBJECT DESTRUCTURING
+ 
+    let {greet, message} = this.props;
+    return (
+      <div>
+           <h1>{greet}Guys...</h1>
+           <h2>{message}</h2>
+      </div>
+    )
+  }
+}
+
+export default Greet
+
+------------------------------------------------
+Dy 3:
+
+1. Conditional Rendering
+2. List Rendering
+3. Lifting the state up
+    Parent : EventHandler function -> Child: state
+    -How to pass an event handler function as props to the child
+
+4. How can we style our component
+    a)Global CSS
+    b)Local/Module level CSS
+    c)Inline CSS
+    d) How to use bootstrap classes in React App
+
+
+---------------------------------------------------------
+
+DAY 5:
+
+1. Component LifeCycle methods
+2. Controlled and Un-Controlled Form In React
+3. How to configure json-serverand perform all the CRUD opertion
+   POST, GET, DELETE, PUT
+
+   1. fetch method
+   2. axios library  => npm i axios -g
+
+-----------------------------------
+
+1. React Component Lifecycle Hooks
+
+Note :We can only use these methods in class based component.
+
+Constructor(is optional)
+    we write state initilization code.
+
+2. render (mandatory) called
+    JSX is returned and wll be rendered on the screen.
+
+3. componentDidMount() - Lifecycle method 
+               --> used for data Loading code
+               --> REST API GET call
+               --> this will be called once after first call of render
+              --> [sit and wait for an update] waiting for state change
+              --> [render (mandatory) called]
+            
+4. componentDidUpdate() ->
+    --  After State updation wants to some event handling.
+    -- called if the component updates itself.
+
+5. componentWillUnmount() 
+   -- Good place to have cleanip code.
+   -- If we decide to no longet show the component, at this time this called
+
+
+
+3 Other Lifecycle methods (rareely used)
+i. shouldComponentUpdate
+11. getDerivedStateFromProps
+iii. getSnapshotBeforeUpdate
+
+--------------------------------------------
+
+React Form Handling 
+   a) Uncontrolled Froms 
+     - The Input Fields are Controlled w.r.t HTML DOM object
+     - Refs (Reference) in React
+
+   b) Controlled Forms
+    - The Input Fields are Controlled w.r.t HTML Component State
+    - We link our input fields to component state.
+    - onChange() -> input -> state 
+
+-------------------------------------------------
+
+Fetch vs axios
+
+ install axios ->  npm install axios --save
+
+ 
+Ways to fetch the Data by Axios :-
+
+1. Fetching the data using promises
+
+2. Fetching the data with sync and await keywords
+
+
+-------------------------
+
+How to configure c JASON Server
+- library json server
+- we can create Dummy RESTful Webservice
+
+1. npm i json-server --save
+   
+    to start the json server  
+2. json-server --watch db.json --port 3005 ()
+                 (Root of your project create a file db.json)
+
+------------------------------------------
+
+Dummy data JSON :--
+
+{
+    "posts": [
+        {
+            "id": 1,
+            "title": "json-server",
+            "author": "typicode"
+        }
+    ],
+    "comments": [
+        {
+            "id": 1,
+            "body": "some comment",
+            "postId": 1
+        }
+    ],
+    "profile": {
+        "name": "typicode"
+    }
+}
+
+----------------------------------------------------
+
+
+
+
+
+
+-------------------------------------------------
+
+DAY 6 :
+
+1. React Routing
+
+npm install react-router-dom
+
+Router gives us 4 components. which help us to implement the routing
+
+1. Route
+ 
+In route component we need to pass the two props,
+
+path: it means we need to specify the path
+
+component: which component user needs to see when they will navigate to the path.
+
+
+Enclose the app component(<App/>) with Broweser Router component in the parent file i.e index.js
+
+ReactDOM.render(
+ <BrowserRouter> <App/>, </BrowserRouter>, document.querySelector("#root")
+);
+
+
+2. Link
+3. BrowserRouter
+4. Switch
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+If you want to pass User defined props to the Routing Component Syntax
+
+
+{...props}
+
+
+2. Higher Order Component
+
+2. Pure Components
+ 
+This component has implemented a method shouldComponenetUpdate()
+ this method checks prev state to the current state
+
+if the prev state and the current state is same , 
+                  then shouldComponenetUpdate() => false
+
+
+3. Context API In React
+ 
+    - if we have multiple nesting component i.e one component inside 
+      another (as a tree structure we can't pass the props as below
+ 
+      <Toolbar theme ={theme}/>  ->
+
+      <ThemedButton theme={this.props.theme}/> ->
+
+       style={{backgroundColor: `${this.props.theme}`}}
+
+Hence there comes a concept a Context API
+
+   export const ButtonContext = React.createContext('yellow');
+    ->light is the default theme
+
+export const ButtonContextProvider = ButtonContext.Provider;
+                      -> can override the theme
+     
+
+export const ButtonContextConsumer = ButtonContext.Consumer;    
+                   -> can consume the theme
+
+
+--------------------------------------
+
+
+
+
+
+5. 
+
+<link to="/users">Users</link>&nbsp;&nbsp;
+
+49.02 ,line 62 49.4
+
+
+
+
+
+
+--------------------------------------------------------
+
+
+DAY: 7
+
+What are Hooks ?
+
+1.  We can excess the state of the component using Hooks in
+    Functional component.
+
+
+-> Hooks dont work with classes
+
+
+
+--------------------------------------------------
+
+DAY 7:
+
+Redux
+
+
+
+-------------------------------------------------------------
+
+
+
+YT : -
+
+18. What is Fragments ?
+
+1. Allowing grouping of multiple elements without extra DOM nodes.
+
+
+Why to use Fragment ?
+
+1 .Return multiple elements without a wrapping parent.
+
+2. Cleaner DOM and consistent styling.
+
+
+syntaxes;
+
+1. <React.Fragment> </React.Fragment> => import React  from "react";
+   or
+   <> </>
+
+-------------------------------------------
+
+
+19. Map Method :
+
+1. Purpose : Render list from array data.
+
+2. JSX Element: Tranform array items into JSX.
+
+3. Inline Rendering: Directly inside JSX
+ 
+ {items.map(item => <li key={item.id}> {item.name} </li>)}
+
+4. key Prop: Assign unique key for optimized re-renders.
+ 
+   <div key={item.id}> {item.name}</div>
+
+
+-------------------------
+
+ let foodItems = ["Sabzi", "Green", "Papaya", "Carrot", "Roti"];
+
+
+ {foodItems.map((item) => <li className="list-group-item">An item</li>)}
+
+  inside the curly braces there will code Java Script
+
+ foodItems.map -> map will pass one by one foodItems on item 
+
+
+<li  key={item.id} className="list-group-item"> {item} </li> -> 
+
+    and will convert  into list
+
+
+ key={item.id} -> To render the list every item should have a unique
+
+ key  (react ka kaam h update ko save krna) so that changes could made 
+
+ on that specifed part of the page only.   key = seen in virtula DOM
+
+
+-------------------------------------------------
+
+20. Conditional rendering :
+
+1. Displaying content based on certain condition
+1. Allows for dynamic user interfaces.
+
+
+{ condition && <div> Write something</div>}
+
+  {foodItems.length === 0 && <h3>I am still hungry</h3>}
+     
+
+{ !condition ? Error do it again </div> : <div>Congraluation</div> }
+
+{foodItems.length === 0 ? <h3>I am still hungry</h3> : null}
+
+
+
+------------
+
+Fragments -
+
+App.jsx
+
+
+
+// import FoodItems from "./components/FoodItems";
+// import ErrorMessage from "./components/ErrorMessage";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+// import Container from "./components/Container";
+
+function App() {
+  let foodItems = ["Sabzi", "Green", "Ghee", "Papaya", "Carrot", "Roti"];
+
+  //let foodItems = [];
+  // if (foodItems.length === 0) {
+  //   return <h3>I am still hungry</h3>;
+  // }
+
+  // Alternate way
+  // let emptyMessage = foodItems.length === 0 ? <h3>I am still hungry</h3> : null;
+
+  return (
+    <>
+      <h1>Healthy Food</h1>
+
+       {/* Alternate way */}
+      {/* {foodItems.length === 0 ? <h3>I am still hungry</h3> : null} */}
+
+      {/* // Alternate way */}
+      {/* {emptyMessage} */}
+      
+      {/* // Alternate way */}
+      {foodItems.length === 0 && <h3>I am still hungry</h3>}
+      
+      <ul className="list-group">
+        {foodItems.map((item) => (
+          <li key={item.id} className="list-group-item">
+            {item}
+          </li>
+        ))}
+      </ul>
+    </>
+
+    // <Container>
+    //   <h1 className="food-heading">Healthy Food</h1>
+    //   {/* <FoodInput handleKeyDown={onKeyDown}></FoodInput> */}
+    //   <ErrorMessage items={foodItems}></ErrorMessage>
+    //   <FoodItems items={foodItems}></FoodItems>
+    // </Container>
+  );
+}
+
+export default App;
+
+
+-----------------------------------------------------------
+
+Passing Data via Props :-
+
+21. Props in React: 
+
+1.  Sort for properties
+2.  Mechanism for passing data
+3.  Read-only default
+
+Usage :-
+
+1. Pass data from parent to children component
+2. Makes component reusable
+3. Defined as attribute in JSX
+
+KEY POINTS :- 
+
+1. Data flow one-way (downwords)
+2. Props are immutabl
+3. Used for commuinication b/w components
+
+
+const Item = ( props ) => {
+  let foodItem = props
+  return (
+    <li  className="list-group-item">
+      {props.foodItem}
+    </li>
+
+------------------------------------
+
+const Item = ( props ) => {
+  let {foodItem} = props   // object destructuring
+  return (
+    <li  className="list-group-item">
+      {foodItem}
+    </li>
+
+---------------------------------------------------
+
+
+23. Passing Children :-
+
+1. children is a special prop for passsing elements into components.
+2. Used for flexible and resuable components designs.
+3. Common in layout or container components.
+4. Accessed with props.children
+5. Can be any content : string, numbers, JSX, or Components.
+6. Enhances components composability and reusability
+ 
+const Container = ({children}) => {
+  // return <div className={styles.container}>{props.children}</div>
+  return <div className={styles.container}>{children}</div>
+};
+
+
+-------------------------------------------------------
+
+24. Handeling Events
+
+1. React events use CamelCase, e.g onClick.
+2. Events Handler can be functions or arrow function
+3. use onChange for controlled form inpputs.
+5. Avoiod inline arrow functions in JSX for performance
+
+
+ const handleBuyButtonClicked = () => {
+    console.log(event);
+    console.log(`${foodItem} beign bought`)
+  }
+
+
+  <button
+        // onClick={() => console.log(`${foodItem} beign bought`)}
+        onClick={(event) => handleBuyButtonClicked(event) }
+        className={`${styles.button} btn btn-info`}
+      >
+        Buy
+      </button>
+
+
+------------------------------------------------
+
+25. Passing function via props :-
+
+1. Pass dynamic behaviour between components
+2. Enable upward communication form child to parent.
+3. Commonly used for event handling
+4. Parent defines a function and child invokes it.
+5. Enhances component interactivity
+
+Food input.jsx :- onChangeHandler 
+Item.jsx : handleBuyButtonClicked
+
+
+-------------------------------------------------
+
+Managing State :
+
+useSate() : Return's an Array of two element
+ 
+            1. current value and
+            2. method or function
+
+ let textStateArr = useState();
+ let textStateVal = textStateArr[0];
+ let setStateVal = textStateArr[1];
+
+ let textToShow = "Food Item Entered by user";
+
+  
+1. State represents data that changes over time.
+2. State is local and private to the component.
+3. State change causes the component to re-render.
+4. For functional components, use the useSate hook.
+4. Hooks should only be used inside components.
+5. Parent components can pass data down to children via props.
+
+6. Lifting state up- share state b/w the comp by moving it to their closest common ancestor.
+
+
+-----------------------------------------------------------
+
+State vs Props :
+
+State :
+
+1. Local and mutable data within a component.
+
+2. Initialized within the component
+
+3. Can Channge over time
+
+4. Managed using useState in functional component
+
+-----------------
+
+Props:
+
+1. Passed into a component form its parent.
+
+2. Read-only(immutable) within the receiving component.
+
+3. Allow parent-to-child component communication.
+
+4. Changes in props can also re-redner.
+
+
+-----------------------------------------------------------
+
+How React Works ?
+
+
+Virtual DOM :-
+
+1. React creates an in memory structrue called the Virtual DOM.
+
+2. Different from actual DOM browser.
+
+3. It's a lightweight representation where each node stands for a component and its attirbute.
+
+
+
+
+Virtual DOM - includes react components and their properties(in memory structure). 
+React will make tree of the component which is called Virtual DOM. And the props, states 
+of the components  is plced in Virtual DOM.
+
+Whenever we make changes in one component(like state change, props), react first update  
+virtual DOM . and the process is called 
+
+Reconciliation Process;
+
+1. When the component data changes, React update the virtual DOM's state to mirror these changes.
+
+2. React then compares the current and prev version of the virtual DOM
+
+3. It identifies the specific nodes that need updating.
+
+4. Only these nodes are updated in the real brower DOM(actural DOM), making it efficient.
+  
+
+----------------------------------------------------------------------
+
+
+Using Forms : 
+
+1. State Management : Each input's sate is stored in the component's state.
+
+2. Handling changes: Use onChange to detect inputchamges.
+
+3. Submission: Utilize onSubmit for form submission and prvent default with
+event.preventDefault().
+
+4. Validation: Implement custom validation or use third party lib.
+
+
+----------------------------------------------------------------
+
+Use Ref : -
+
+
+1. useRef allows access to DOM elements and retains mutubale values without re-renders.
+
+2. Used with the ref attribute for direct DOM interactions.
+
+3. Can hold previous state or prop values.
+
+4. Not limited to DOM references; can hold any value.
+
+5. Refs can be passed as props also.
+
+
+---------------------------------------------------------------------
+
+Update states form previous state : 
+
+1. Spread operator : use to maintain immutability when updating arrays or objects.
+
+2. Functional Updates: Use
+
+(existingPosts) => [postData, ...existingPosts]
+
+to avoid stale values during asynchronous updates.
+
+
+------------------------------------------------------------------
+
+Context API :
+
+1. Prop Drilling: Context API address prop drilling; component composition is an
+                  alternate.
+
+2. Folder Setup: Use a store folder for context files.
+
+3. Initilaization: Use React.create Context with initial state and export it.
+
+export const TodoItemsContext = createContext([
+  {
+    todoItems: [],
+    addNewItem: () => {},
+    deleteItem: () => {},
+  },
+]);
+
+
+4. Provider: Implement with contextName.Provider in compoment
+
+<TodoItemsContext.Provider><TodoItemsContext.Provider/>
+
+5. Access Value: Use the useContex hook.
+
+
+
+
+-----------------
+
+useReducer
+------------
+
+Dummy API
+
+-> Dummy JSON
+
+-----------------------------------
+
+Data fetching using Fetch :-
+
+1. fetch: Modern JavaScript API for networks requests.
+
+2. Promise-Based: Return a Promise with a Response object.
+
+3. Usage: Default is GET. For POST use method:'POST'
+
+4. Response: Use .then() and response.json() for JSON data.
+
+5. Errors: Doesn't reject on HTTP errors. Check response.ok
+
+6. Headers: Managed using the Headers API.
+
+
+--------------------------------------------------------------------
+import { useContext, useState } from "react";
+
+ const [dataFetched, setDataFetched] = useState(false);
+
+  if (!dataFetched) {
+    fetch("https://dummyjson.com/posts")
+      .then((res) => res.json())
+      .then((data) => {
+        addInitialPost(data.posts);
+      });
+    setDataFetched(true);
+  }
+
+---------------------------------------------------
+The useEffect Hook :-
+
+  useEffect(() => {
+    fetch("https://dummyjson.com/posts")
+      .then((res) => res.json())
+      .then((data) => {
+        addInitialPost(data.posts);
+      });
+  }, []);
+
+
+  -----------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
