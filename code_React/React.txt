@@ -851,6 +851,20 @@ The useEffect Hook :-
   -----------------------------------------------------------------
 
 
+The useEffect Hook :-
+
+1. In function-based components, useEffect handles side effecrs like data fetching or
+
+ event listeners.
+
+2. useEffect runs automatically after every render by default.
+
+3. By providing a dependency array useEffect will only run when specified variable change.
+   An empty array means the effect runs only once. 
+
+4. Multiple useEffect hook can be used in a single component for organizing different side effect seperately.
+
+  -----------------------------------------------------------------
 
 
 
