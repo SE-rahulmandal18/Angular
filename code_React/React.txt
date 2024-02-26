@@ -853,6 +853,12 @@ The useEffect Hook :-
 
 The useEffect Hook :-
 
+ 
+It takes 2 agrument 1) method or function 
+
+                    2) []  -> see the  useEffect.png file 
+
+
 1. In function-based components, useEffect handles side effecrs like data fetching or
 
  event listeners.
@@ -868,6 +874,103 @@ The useEffect Hook :-
 
 
 
+
+The useEffect hook cleanup :- 
+
+
+
+ const controller = new AbortController();
+    const signal = controller.signal;
+
+
+    fetch("https://dummyjson.com/posts", { signal })
+      .then((res) => res.json())
+      .then((data) => {
+        addInitialPost(data.posts);
+        setfetching(false);
+        // console.log("fetched returned");
+      });
+
+    return () => {
+      console.log("Cleaning up UseEffect");
+      controller.abort();
+    };
+
+    // console.log("fetched ended");
+  }, []);
+
+
+
+-----------------------------------------------------------------
+
+use Callback hook :-
+
+1. Memoization: Preserves function accross renders to prevent unnecessary re-renders.
+
+2. Optimaization:  Enhance performance in components with frequent updates.
+
+3. Dependency Array: Recreate the function only when spcific dependencies change.
+
+4. Event Handlers: Used to keep consistent function references for child component.
+
+5. with useEffect: Prevents infinite loops by maintaining functions references.
+
+
+-----------------------------------------------------------------
+
+NOTE :
+
+1. useEffect - ek function ko tb execute kr rha tha jb uski dependencies change hue
+
+2. useCallback - ek method ko return kr rha tha or uss method ki defination wo sirf tb change 
+ 
+krta thajb uski dependencies change hue.
+
+useCallback(
+
+     () => {
+
+     function(a,b)      -> takes function
+   },
+
+     [a, b]             -> takes dependency array
+);      
+
+
+-----------------------------------------------------------------
+
+
+The useMemo hook :-
+
+useMemo(
+
+     () => {
+
+    return value;      -> takes function and retrun value
+   },
+
+     [a, b]             -> takes dependency array
+);  
+
+example:
+ 
+const array = [5, 2, 5, 4, 7, 3];
+const sortArray = useMemo(() => arr.sort(), [arr]);
+
+
+1. Memoization: useMemo caches the result of expensive calculations to enhance performance.
+
+2. Re-computation - only re-computes the memozied value when spefic dependencies change.
+
+3. Otimization: Help prevent unnecessary recalculation, improving component rendering efficiency.
+
+4. Dependency Array: Uses an array of dependencies to determine when to recpmpute the cached
+value.
+
+5. Comparison with useCallback: while useCallback memoizes functions, useMemo memoizes value
+or result of functions.
+
+------------------------------------------------------------------------------------------------------------
 
 
 
