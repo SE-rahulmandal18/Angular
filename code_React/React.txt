@@ -975,6 +975,128 @@ or result of functions.
 
 
 
+Custom Hooks :  
+
+
+
+------------------------------------------------------------------------------
+
+
+
+React Router :-
+
+npm install react-router
+
+npm install react-router-dom
+
+
+1. RouterProvoder: wraps the app for routing capabilites
+
+2. createBrowserRouter: helps creating the mapping for router provider.
+
+
+--------------------------------------------- 
+
+Layout Routes :-
+
+1. Layout Routes help us to use shared elements.
+
+2. Outlet component is used to render the children at the correct place.
+
+---------------------------------------------
+
+
+Route Links :-
+
+1. Link component with to property can be used to provide reloading.
+
+2. useNavigate hook can be used to do navigation progammaticaly.
+
+const navigate = useNavigate();
+
+navigate("/")
+
+---------------------------------------------
+
+Data fetching using loader :
+
+1. loader method can be used to load data before  particular route is executed.
+
+2. The loader method  must return the data that is loaded or promise.
+
+3. Data us availabe in component and all the child components.
+
+4. useLoaderData hook  can be used to fetched the data.
+
+5. Loadind sate can also be used.
+
+
+import { useLoaderData } from "react-router-dom";
+
+const PostList = () => {
+const postList  = useLoaderData(); 
+
+
+---------------------------------------------
+
+Submitting data using action :-
+
+1. Action method cane be used to perform an action on submission of Forms.
+
+2. Custom Form component need to be used along with name attributes for all input. 
+
+3. Action fn will get an data obj. To generate correct req obj
+
+method="post" attribute sholud be used.
+
+4. Data.request.formData() method can be used to get form data object.
+
+5. Object.fromEntires(fromData) can be used to get actual input data.
+
+6. redirect() repsonse can be returned for navigation after submission.
+
+------------------------
+
+ action: createPostAction (main.jsx)
+
+see createPost.jsx file
+
+<Form method="POST"
+
+name="userId"
+
+/Form>
+
+--------------------------
+
+
+export async function createPostAction(data) {
+  const formData = await data.request.formData();
+  const postData = Object.fromEntries(formData);
+  postData.tags = postData.tags.split(" ");
+  console.log(postData);
+
+  fetch("https://dummyjson.com/posts/add", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(postData),
+  })
+    .then((res) => res.json())
+    .then((post) => {
+      // addPost(post);
+      console.log(post);
+      // navigate("/");
+    });
+
+  return redirect("/");
+}
+
+
+-----------------------------------------
+
+
+
+
 
 
 
