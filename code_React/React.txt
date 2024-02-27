@@ -972,15 +972,32 @@ or result of functions.
 
 ------------------------------------------------------------------------------------------------------------
 
-
-
-
 Custom Hooks :  
 
+1. Resulable Logic : Custom hook allows you to extract and reuse component logic across
 
+multiple components.
+
+2. Naming Convention: Typically start with "use" e.g (useWindowSize, useFecth).
+
+3. Combining Hooks: Custom hooks can combine multiple built-in-hooks like useState,
+
+useEffect, and others.
+
+
+4. Sharing state: Enables sharing of stateful logic without changing component hierarchy.
+
+5. Isolation: Helps in isolating complex logic, making components cleaner and easier to
+
+maintain.
+
+6. Custom Return Values: Can return any value (arrays, object or any other data types)
+
+based in req. 
+
+  
 
 ------------------------------------------------------------------------------
-
 
 
 React Router :-
@@ -1092,7 +1109,7 @@ export async function createPostAction(data) {
 }
 
 
------------------------------------------
+------------------------------------------------------------------------------------------
 
 
 
