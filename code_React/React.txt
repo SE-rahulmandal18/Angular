@@ -1112,22 +1112,148 @@ export async function createPostAction(data) {
 ------------------------------------------------------------------------------------------
 
 
+Redux :-
+
+1. State management for cross component or app-wide state.
+
+2. Redux is a predictable state management library for javascript apps.
+
+3. Local state vs Cross-comp state vs App-Wide state.
+
+4. useSate or useReducer us useState with prop drilling vs useSate or useContext or Redux.
+
+-----------------------------------------------------
+
+
+React-Context vs Redux :-
+
+
+1. You can use both.
+
+2. Setup and Coding is tough especially if you have multiple context provides.
+
+3. Performance is slow. Contex should onlu be used for things that rarely change.
+
+On the other hand REDUX has greater performance.
 
 
 
+-----------------------------------------------------------
+
+
+How Redux works ?
+
+1. Single Source: Uses s single central store to maintain the entire application's state.
+
+2. Actions: Component never directly change the store. Changes to state are made through
+
+dispatched actions, which describe evenets.
+
+3. Reducers: Actions are processed by reducers, pure fuctions that return the new state.
+
+4. Immutable: State is immutable; every change results in a new state object.
+
+5. This is different form useReducer hook.
+
+------------------------------------------
+
+
+Woking with Redux :-
+1. npm init -y (will create a node project with package.json file)
+
+2. npm install redux
+
+3. import in node Const redux = require('redux');
+
+4. We need to setup all 4 basic things;
+
+   a) Reducer
+   b) Store
+   c) Subscribe
+   d) Actions
+
+5. Node 1-only-redux.js command to run node server
+
+
+------------------------------------------------------------
+
+
+React with Redux :-
+
+
+1. npm install redux
+2. npm install react-redux
+
+3. Create store folder with index.js file
+
+4. Creating the store using 
+   
+   import {createStore} from redux
+
+5. Providing the store with react
+
+   1. Provider form react-redux
+   2. <Provider store={store}></App></Provider>
+
+6. Using the store
+  
+   1. useSelector hook gets a slice of the store
+      Const counter =  useSelector(state.counter)
+
+   2. Subscription is already setup and only will re-execute 
+      when only your slice is changed. Subscription is auto cleared aslo.
+
+7. Dispatch Actions using useDispathc hook.
+
+
+------------------------------------------------------------
+
+WHY REDUX TOOLKIT ?
+
+1. actions types are difficult to maintain
+
+2. Store becoming too big.
+
+3. Mistakenly edit store.
+
+4. Reducet becoming too big
 
 
 
+------------------------------------------------------------
 
 
+Working with REDUX TOOLKIT :-
 
 
+1. npm install @reduxjs/toolkit
+2. Remove redux from package.json
+
+3. Import{createSlice} from  @reduxjs/toolkit
+
+4. Slices of the store can be created using the following syntax:
+
+Const slice = createSlice({
+
+   name: ",
+   initialState: {}
+   reducer: {
+     smallReducerMethods:(state, action) => {
+   },
+ }
+})
 
 
+5. ConfigureStore combines multiple reducers and can be used as
+
+   configureStore({
+     reducer:{name: slice.reducer}
+   })
+
+6. Export actions = slice.actions;
+
+7. Actions can be dispatched like: actions.reducerMethod(payload)
 
 
-
-
-
-
+-----------------------------------------------------------------------------------------------------
 
