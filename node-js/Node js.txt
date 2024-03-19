@@ -1,0 +1,333 @@
+
+
+
+4) to load the modules -> 
+
+require()
+
+or 
+
+new experimental features
+
+2) save the file as "mjs" extn, export
+b) import the class / function 
+c) node --experimental-modules filename.mjs
+
+
+5) Types of Modules
+
+a)Core module -> inbuilt node js modules
+
+fs
+os
+http
+
+b)Third-party module
+expressJS
+Jquery
+React
+React DOM
+
+c)Local module  -> user defined
+
+---------------------------------------------
+
+
+6) how the modules are loaded......?
+
+nodejs follows a specific pattern of seaching for modules
+
+
+--------------------------------------------------------
+
+
+Node provides REPL => Read Evaluate Print Loop
+
+
+
+
+---------------------------------------------------------
+
+we have a core module 
+
+http
+
+-------------
+
+i will also create a module => http -? and load that
+
+require ("http")
+
+------------------
+
+core module will be loaded ...
+
+user defined module will be ignored by the Node.JS
+
+-----------------------------------
+
+5) Modules are Cached...
+
+a) node.js is case sensitive
+
+if the module is loaded more than once with different cases ->
+node will assusme that they are different modules
+
+b) if the module is loaded more than once with same cases ->
+Node will ignore the next set require("") as they are cached
+
+
+-------------------------------------------------
+
+6) Packages => collextion of modules
+
+
+------------------------------------------------
+
+how to create a custom a package and make it accessible to public
+
+
+1) create a account in npm registry
+
+npm registry -> repo of packages..
+
+2) once you hv created an account -> sign in from cmd
+
+npm login
+
+or adduser
+
+3) create a folder that has the node.js modules
+
+4) package.json
+
+all the meta data details of your package
+
+1) npm init -> to create a package.json 
+
+2) npm init --y
+
+
+------------------------------------------------------------
+
+npm publish --access=public
+
+------------------------------------------------------------
+
+
+closures :-
+
+
+function foo() {
+// the function scope
+
+let count=0;
+console.log(count);  // logs 0
+}
+
+
+foo();
+
+console.log(count)   // ReferenceError: count is not defined
+
+// outside of the foo() scope, count is inaccessible
+
+
+-------------------
+
+
+scope manages variable accessibility
+
+
+function foo() {
+// the function scope
+
+let count=0;
+console.log(count);  // logs 0
+}
+
+
+
+
+function bar() {
+// "bar" function scope
+
+let count=1;
+console.log(count);  // logs 1
+}
+
+foo();
+
+bar();
+
+
+// count variables from foo() and bar() func scopes do not collide
+
+------------------
+
+Nesting of Scopes !!
+
+function outerFunc() {
+// the outer scope
+let outerVar= 'I am outside!';
+
+function innerFunc() {
+// the inner scope
+
+console.log(outerVar); // => logs "I am outside!"
+}
+
+innerFunc();
+}
+
+outerFunc();
+
+
+scopes can be nested
+The variable of the outer scope are accessible inside the inner scope
+
+---------------------------
+let say
+
+innerFunc() is invoked outside of outerFunc()
+
+Would innerFunc() still be able to access outerVar?
+
+function outerFunc() {
+let outerVar = 'I am outside!';
+
+function innerFunc() {
+
+console.log(outerVar); // => logs "I am outside!"
+}
+
+return innerFunc;
+
+}
+
+
+const myInnerFunc = outerFunc();
+myInnerFunc();  // can i still access outervar ?
+
+YES
+
+innerFunc() closes over(or caputres and remembers) the varibale
+outerVar from its lexical(current) scope.
+
+In other words, innerFunc() is a closure because it closes
+over the variable outerVar from its lexical scope.
+
+---------------------------------------------------
+
+Named imports and default imports :-
+
+// sample.js
+export default class Abc
+{
+//
+}
+
+import abc from "./sample.js";
+
+you can have only 1 default export / file
+
+React js
+
+-------------------------------------------------
+// sample .ts
+export class Abc
+{
+//
+}
+
+export class xyz
+{
+}
+
+person.ts
+
+import {abc, xyz} from ',/sample'
+
+you may import more than one class
+
+
+--------------------------------------------------
+
+
+blocking code  -> sync
+non blocking code  -> async
+
+
+when node encounters async call ->
+
+it borrows a thread from the OS using Libuv
+that thread will be given the job for execution+callback is attached
+
+
+----------------------------------------------------------------
+
+DAY 3:
+
+Architecture :
+
+core comp of Node.js env - libuv
+
+libuv - abstraction layer over the OS specific non blocking I/O mechanism.
+Libuv is the main driver for the event loop mechanism in Nodejs.
+
+node.js uses this to communicate with OS to perform os related jobs
+
+libuv -> provider event loop -> partial infinte loop which is create buy node js
+
+when node js environment starts running your applications event loop is responsilbe for the execution of your programme.
+
+
+Libuv provides the follwing features:
+
+Event loop
+Timers
+TCP/UDP sockets
+Named pipes
+Filesystem opreations
+Signal Handeling
+Child process
+TTY
+Threading utilites
+
+----------------------------------
+
+The Event Loop
+
+The Event loop is the magic behind Node.js
+
+The Event Loop is a single threaded ans semi-infinite loop based on libuv.
+It's calles a semi-infinite loop because it quits at some point when there
+is more work left to be done. From devloper's prespective, that's the point
+when your program exits.
+
+
+
+When Node,js starts, it initializezs the event loop, process the provided input
+script which may make async API calls, schedule timers, or call process.nextTick(),
+then begins processing the event loop.
+
+
+The role of this loop is to schefuke which operations our only thread 
+should be performing at any given point of time.
+
+14.15
+
+
+
+
+
+
+-----------------
+
+Create custom exception clasees
+
+1) eventEmitter -> Core Module -> event triggers an event / custom event
+
+2) core module -> util -> derive class -> functios/modulefrom 
+
+
